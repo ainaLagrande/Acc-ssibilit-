@@ -1,9 +1,18 @@
-# vue-project
+# Accéssibilité project
 
-This template should help get you started developing with Vue 3 in Vite.
+Ce site est un projet portant sur le contenu web accéssible à tous.
+Il réunis la documentation , checklist et tips à avoir lors de la conception d'un site web performant qui tient compte de toute la diversité humaine en matière d'aptitudes physiques, de langue, de culture, de sexe, d'âge et de toute autre forme de différence.
 
+
+![Alt text](presantation.png?raw=true "Présentation")
+## Dependencies:
+
+- Vue vite
+
+- Vue-carousel
+
+- Vue-router
 ## Recommended IDE Setup
-
 [VSCode](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur) + [TypeScript Vue Plugin (Volar)](https://marketplace.visualstudio.com/items?itemName=Vue.vscode-typescript-vue-plugin).
 
 ## Customize configuration
