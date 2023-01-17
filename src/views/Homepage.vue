@@ -4,10 +4,10 @@
         <div class="home-box">
             <div class="home-txt">
                 <p>Comment procéder à la visite de ce site ?<br>
-                Si tu ne sais pas ce que c'est l’accéssibilité , je te conseille de visiter la page <router-link to="/what" class="underline">Quoi</router-link>
-                Puis la page <router-link to="/how" class="underline">Comment</router-link> ou vous trouverez les bonnes pratiques detailéé à suivre avec des exemples
-                Une fois que tu as pris connaissance de ces pages la , tu peux procédér à la <router-link to="/checklist" class="underline">Checklist</router-link>
-                Verifie que tous les criteres sont respectés et fais vérifier ton site par achecker</p>
+                Si tu ne sais pas ce que c'est l’accessibilité, je te conseille de visiter la page <router-link to="/what" class="underline">Quoi</router-link>
+                Puis la page <router-link to="/how" class="underline">Comment</router-link> ou tu trouveras les bonnes pratiques détaillées à suivre ,
+                Une fois que tu as pris connaissance de ces pages la , tu peux procéder à la <router-link to="/checklist" class="underline">Check-list</router-link>
+                Verifie que tous les critères sont respectés et fais vérifier ton site par <a href="https://achecker.achecks.ca/checker/index.php" target="_blank" class="underline">achecker</a> </p>
             </div>
             <div class="home-img">
                 <img src="../assets/images/s (1).webp" alt="image 3D personne sur le fauteil roulant">
