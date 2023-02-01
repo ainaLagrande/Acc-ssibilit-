@@ -2,12 +2,8 @@
 import 'vue3-carousel/dist/carousel.css';
 import { Carousel, Slide, Navigation, Pagination } from 'vue3-carousel';
 
-
-
-
-
 const slides = [
-  // Slide 1
+// Slide 1
 { 
   id: '1', 
   img: 'inadequation.png', 
@@ -60,6 +56,7 @@ content: "Les règles WCAG sont articulées autour de 4 grands principes :un con
         </template>
      </Carousel> 
     </div>
+
 </template>
 
 <style lang="scss" scoped>
@@ -67,14 +64,6 @@ content: "Les règles WCAG sont articulées autour de 4 grands principes :un con
 .what-container{
   height: 88vh;
 }
-
-  .carousel{
-    height: 100%;
-    display: grid;
-    justify-content: center;
-    flex-direction: column;
-    align-items: center;
-  }
 .carousel__item {
   min-height: 200px;
   width: 80%;
