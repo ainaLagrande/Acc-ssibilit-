@@ -25,26 +25,30 @@ import Global from './howParts/Global.vue';
 </script>
 
 <template>
-
+    <header class="how-header">
+        <h3 class="how-header-title">Comment?</h3>
+    </header>
     <div class="container" id="vue-app">
-    <div class="row">
-        <div class="col-2-sm">
-        <nav class="nav flex-column">
-            <a v-for="page in pages" class="nav-link" href="#" v-bind:class="{active:activePage == page.id}" v-on:click="activePage = page.id">{{ page.label }}</a>
-        </nav>
+        <div class="row">
+            <div class="col-2-sm">
+                <nav class="nav flex-column">
+                    <a v-for="page in pages" class="nav-link" href="#" v-bind:class="{active:activePage == page.id}" v-on:click="activePage = page.id">{{ page.label }}</a>
+                </nav>
+            </div>
+            <div class="col how-page-content">
+
+
+                <div v-if="activePage == 'p1'">
+                    <Global/>
+                </div>
+                <div v-if="activePage == 'p2'">
+                    <h3>Page 2</h3>
+                </div>
+                <div v-if="activePage == 'p3'">
+                    <h3>Page 3</h3>        
+                </div>
+            </div>
         </div>
-        <div class="col">
-        <div v-if="activePage == 'p1'">
-            <Global/>
-        </div>
-        <div v-if="activePage == 'p2'">
-            <h3>Page 2</h3>
-        </div>
-        <div v-if="activePage == 'p3'">
-            <h3>Page 3</h3>        
-        </div>
-        </div>
-    </div>
     </div>
 
 </template>

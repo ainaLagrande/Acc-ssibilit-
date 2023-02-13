@@ -1,0 +1,13 @@
+// Import variables Material Design Icons
+@import "/node_modules/@mdi/font/scss/variables";
+
+
+// Ajout d'un \ devant une variable
+@mixin variable-icon-font($icon-code) {
+    content: #{'"\\'}#{$icon-code + '"'};
+}  
+
+$primary: #3E018B;
+$secondary: #A5A5FB;
+$white:#ffff; 
+

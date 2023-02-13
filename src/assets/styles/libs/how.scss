@@ -1,0 +1,46 @@
+.how-header{
+    height: 11rem;
+    background-color: $secondary;
+    opacity: 0.8;
+    color: $white;
+    background-image: url(../images/header.png);
+    background-repeat: no-repeat;
+    // background-size: cover;
+    background-size: 100% 100%;
+    background-position: center;
+    .how-header-title{
+        width: 100%;
+        height: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 4rem;
+    }
+}
+
+
+
+
+// Changer d'icones selon l'état 
+.p-accordion-header-link[aria-expanded="false"] {
+    .p-accordion-header-text{
+        &::after {
+            font-family: "Material Design Icons";
+            @include variable-icon-font(map-get($mdi-icons, minus));
+            font-size: 24px;
+            left: -1%;
+            bottom: 2%;
+        }
+    }
+}
+.p-accordion-header-link[aria-expanded="true"] {
+    .p-accordion-header-text{
+        &::after {
+            font-family: "Material Design Icons";
+            @include variable-icon-font(map-get($mdi-icons, plus));
+            font-size: 24px;
+            left: -1%;
+            bottom: 2%;
+        }
+    }
+}
