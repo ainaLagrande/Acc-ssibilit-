@@ -14,6 +14,7 @@ import AccordionTab from 'primevue/accordiontab';
 
                     <AccordionTab header="Utilisez un lang attribut sur l' html élément.">
                         Cela aide les technologies d'assistance telles que les lecteurs d'écran à prononcer correctement le contenu .
+                        <img class="how-img" src="../../assets/images/lang.png" alt="lang code">
                     </AccordionTab>
 
                     <AccordionTab header="Fournir un unique title pour chaque page ou vue.">
@@ -31,6 +32,8 @@ import AccordionTab from 'primevue/accordiontab';
                     <AccordionTab header="Utilisez des éléments de repère (aria attributs) pour indiquer les régions de contenu importantes.">
                         Les régions repères aident à communiquer la mise en page et les zones importantes d'une page ou d'une vue, et peuvent permettre un accès rapide à ces régions. 
                         Apprenez en plus dans <a href="https://openclassrooms.com/fr/courses/6691451-codez-un-site-web-accessible-avec-html-css/6964643-aidez-vos-utilisateurs-a-naviguer-sur-votre-site">ce chapitre </a>                     
+                        <img class="how-img" src="../../assets/images/aria.png" alt="lang code">
+
                     </AccordionTab>
 
                     <AccordionTab header="Évitez d'utiliser l' autofocus attribut.">

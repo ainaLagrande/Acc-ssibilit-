@@ -8,7 +8,7 @@
             <li><router-link to="/how">Comment</router-link></li>
             <li><router-link to="/checklist">Checklist</router-link></li>
         </ul>
-        <h1><router-link to="/">Accéssibilité</router-link></h1>
+        <h1 class="moon"><router-link to="/"><img src="../assets/images/🦆 icon _moon_.png" alt="lune"></router-link></h1>
     </nav>
   </header>
 </template>
@@ -17,27 +17,34 @@
 
 header{
     width: 100%;
+    height: 10rem;
     border-bottom: 1px solid black;
     .nav-primary{
         display: flex;
         justify-content: space-between;
         width: 100%;
+        height: 100%;
         text-transform: uppercase;
 
         ul{
             display: flex;
             justify-content: space-between;
-            align-items: center;
             width: 30%;
-
+            margin: auto;
             li{
                 list-style-type: none;
                 font-size: 2rem;
                 cursor: pointer;
             }
         }
-        h1{
+        .moon{
             font-size: 2rem;
+            display: flex;
+            align-items: center;
+            margin-right: 5%;
+        }
+        .router-link-active{
+            color: #AB2DFF;
         }
     }
 }

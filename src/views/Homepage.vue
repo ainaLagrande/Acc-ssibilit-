@@ -1,5 +1,6 @@
 <script setup></script>
 <template>
+    <img src="../assets/images/home-background.png" class="homepage-img card-img">
     <div class="home-container">
         <div class="home-box">
             <div class="home-txt">
@@ -14,18 +15,18 @@
             </div>
         </div>
     </div>
-
 </template>
 
 <style lang="scss" scoped>
-
+.homepage-img{
+    position: absolute;
+    z-index: -10;
+}
 .home-container{
     width: 100%;
     height: 80vh;
     display: flex;
-    // position: absolute; 
-    // top: 50%; left: 50%;
-    // transform: translate(-50%, -50%);
+    color: white;
     .home-box{
         display: flex;
         justify-content: space-between;
@@ -38,14 +39,11 @@
         width: 70%;
         margin-bottom: 15%;
         p{
+            padding: 8rem;
             font-size: 2rem;
             line-height: 60px;
         }
-        .underline{
-            // text-decoration: underline;
-            cursor: pointer;
-            color: red;
-        }
+
     }
     .home-img{
         display: flex;

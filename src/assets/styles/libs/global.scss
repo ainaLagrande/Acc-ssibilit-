@@ -9,5 +9,13 @@
 
 $primary: #3E018B;
 $secondary: #A5A5FB;
+$tertionary: #AB2DFF;
 $white:#ffff; 
 
+.italic{
+    font-style: italic;
+}
+.underline{
+    cursor: pointer;
+    color: $tertionary;
+}

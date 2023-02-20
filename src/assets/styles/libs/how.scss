@@ -5,8 +5,8 @@
     color: $white;
     background-image: url(../images/header.png);
     background-repeat: no-repeat;
-    // background-size: cover;
-    background-size: 100% 100%;
+    background-size: cover;
+    // background-size: 100% 100%;
     background-position: center;
     .how-header-title{
         width: 100%;
@@ -18,11 +18,66 @@
     }
 }
 
+//Content 
+.container{
+    max-width: 100%;
+    // Nav
+    .how-sidebar{
+        width: 20rem;
+        height: 100vh;
+        background-color: $secondary;
+        a{
+            color: $white;
+            font-size: 1.50rem;
+            line-height: 3rem;
+        }
+        .nav-link.active{
+            color: $tertionary;
+        }
+    }
+    //Color changed if active
+    .p-accordion-tab-active{
+        .p-accordion-header-text{
+            color: $tertionary;
+        }
+    }
+    .how-page-content{
+        .p-accordion-header-action{
+            padding: 2rem;
+            &:hover{
+                text-decoration: none;
+                color: initial;
+            }
 
+            .p-accordion-header-text{
+                font-size: 1.50rem;
+            }
+        }
+
+        .p-accordion-content,.italic,a,li{
+            font-family: Riboto;
+        }
+        .p-accordion-content{
+            padding: 0 2rem 0 2rem;
+            font-family: Riboto;
+
+            font-size: 1.50rem;
+            display: flex;
+            flex-direction: column;
+
+            .how-img{
+                width: 40rem;
+                height: auto;
+            }
+        }
+
+    }
+
+}
 
 
 // Changer d'icones selon l'état 
-.p-accordion-header-link[aria-expanded="false"] {
+.p-accordion-header-link {
     .p-accordion-header-text{
         &::after {
             font-family: "Material Design Icons";
