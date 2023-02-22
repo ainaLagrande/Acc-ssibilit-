@@ -1,7 +1,7 @@
 <script setup></script>
 <template>
-    <img src="../assets/images/home-background.png" class="homepage-img card-img">
-    <div class="home-container">
+    <div class="home-container main-container">
+        <img src="../assets/images/home-background-big.png" class="homepage-img card-img">
         <div class="home-box">
             <div class="home-txt">
                 <p>Comment procéder à la visite de ce site ?<br>
@@ -15,16 +15,15 @@
             </div>
         </div>
     </div>
+
+    
 </template>
 
 <style lang="scss" scoped>
-.homepage-img{
-    position: absolute;
-    z-index: -10;
-}
+
 .home-container{
     width: 100%;
-    height: 80vh;
+    // height: 90vh;
     display: flex;
     color: white;
     .home-box{
@@ -32,6 +31,8 @@
         justify-content: space-between;
         align-items: flex-end;
         width: 100%;
+        position: absolute;
+        top: 20%;
     }
     .home-txt{
         display: flex;
@@ -42,6 +43,9 @@
             padding: 8rem;
             font-size: 2rem;
             line-height: 60px;
+            @media screen and (min-width: 2767px) {
+                width: 75%;
+            }
         }
 
     }

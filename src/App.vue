@@ -11,8 +11,9 @@ import  './assets/styles/style.scss'
 <template>
   <Header></Header>
   <router-view/>
-  <main></main>
+  <!-- <main></main> -->
   <Footer></Footer>
+
 </template>
 
 <style scoped>

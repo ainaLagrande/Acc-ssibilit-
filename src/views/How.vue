@@ -48,7 +48,7 @@ import Outils from '../components/howParts/Outils.vue';
     <header class="how-header">
         <h3 class="how-header-title">Comment?</h3>
     </header>
-    <div class="container">
+    <div class="container ">
         <div class="row">
             <div class="col-2-sm">
                 <nav class="how-sidebar">
@@ -115,5 +115,6 @@ import Outils from '../components/howParts/Outils.vue';
 </template>
 
 <style lang="scss" scoped>
+
 
 </style>

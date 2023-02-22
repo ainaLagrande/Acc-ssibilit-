@@ -1,0 +1,23 @@
+.what-container{
+
+    .first-section{
+        padding-top: 10rem;
+        display: flex;
+        width: 100%;
+        // background-color: red;
+        .txt{
+            width: 100%;
+            padding: 8rem;
+            h3,p{
+                font-family: Riboto;
+            }
+            // background-color: red;
+        }
+        .media{
+            // width: 100%;
+            // background-color: red;
+            display: flex;
+            justify-content: flex-end;
+        }
+    }
+}
