@@ -1,23 +1,109 @@
 .what-container{
+    // Global txt 
+    .txt{
+        width: 100%;
+        padding: 2rem;
+        .uppercase{
+            font-family: Roboto;
+            text-transform: uppercase;
+        }
+        p,li{
+            font-family: Roboto;
+            font-size: 1vw;
+        }
+        .section-title{
+            font-size: 1.5vw;
+            margin-bottom: 2%;
 
-    .first-section{
+        }
+    }
+    // Global sections 
+    .first-section,.second-section,.third-section,.fourth-section{
         padding-top: 10rem;
         display: flex;
         width: 100%;
-        // background-color: red;
-        .txt{
-            width: 100%;
-            padding: 8rem;
-            h3,p{
-                font-family: Riboto;
-            }
-            // background-color: red;
-        }
+    //Media img
         .media{
-            // width: 100%;
-            // background-color: red;
             display: flex;
             justify-content: flex-end;
+            width: 15%;
+
+            img{
+                width: 100%;
+            }
         }
     }
+    // Inter section media 
+    .inter-section{
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        img{
+            width: 50%;
+        }
+    }
+    //Second section 
+    .second-section {
+        justify-content: flex-end;
+        position: relative;
+        .txt{
+            width: 60%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            background-image: url(../images/second-section-before.svg);
+            background-size: 100%;
+
+            color: $white;
+            p{
+                padding: 4rem;
+                padding-left: 20rem;
+            }
+        }
+        //Media img
+        .media{
+            display: flex;
+            justify-content: flex-end;
+            width: 20%;
+            position: absolute;
+            left: 25%;
+            top: 25%;
+
+            img{
+                width: 100%;
+            }
+        }
+    }
+
+
+    //Third section 
+    .third-section{
+        background-image: url(../images/third-section-bg.png);
+        ul{
+            li{
+                list-style-type:"-";
+                font-weight: bold;
+            }
+        }
+    }
+
+
+    //Fourth section 
+    .fourth-section{
+        .txt{
+            width: 70%;
+            line-height: 4rem;
+        }
+        //Media img
+        .media{
+            display: flex;
+            justify-content: flex-end;
+            width: 20%;
+
+            img{
+                width: 100%;
+            }
+        }
+    }
+
 }
