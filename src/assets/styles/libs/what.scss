@@ -1,7 +1,9 @@
 .what-container{
     // Global txt 
     .txt{
-        width: 100%;
+        // width: 100%;
+        width: 65%;
+
         padding: 2rem;
         .uppercase{
             font-family: Roboto;
@@ -9,7 +11,7 @@
         }
         p,li{
             font-family: Roboto;
-            font-size: 1vw;
+            font-size: 0.7vw;
         }
         .section-title{
             font-size: 1.5vw;
@@ -21,6 +23,7 @@
     .first-section,.second-section,.third-section,.fourth-section{
         padding-top: 10rem;
         display: flex;
+        justify-content: space-between;
         width: 100%;
     //Media img
         .media{
@@ -86,13 +89,16 @@
             }
         }
     }
+    .third-section-inter-section{
+        background-image: url(../images/third-section-bg.png);
+
+    }
 
 
     //Fourth section 
     .fourth-section{
         .txt{
             width: 70%;
-            line-height: 4rem;
         }
         //Media img
         .media{

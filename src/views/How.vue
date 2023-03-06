@@ -18,10 +18,13 @@ import Css from '../components/howParts/Css.vue';
 import Outils from '../components/howParts/Outils.vue';
 
 
+    let activePage = localStorage.getItem('activePage') || 'p1';
 
+    function setActivePage(id) {
+        activePage = id;
+        localStorage.setItem('activePage', id);
+    }
 
-
-    let activePage = 'p1';
     let pages =  [
       {label: 'Global', id: 'p1' },
       {label: 'Contenu', id: 'p2' },
@@ -52,62 +55,32 @@ import Outils from '../components/howParts/Outils.vue';
         <div class="row">
             <div class="col-2-sm">
                 <nav class="how-sidebar">
-                    <a v-for="page in pages" class="nav-link" href="#" v-bind:class="{active:activePage == page.id}" v-on:click="activePage = page.id">{{ page.label }}</a>
+                    <a v-for="page in pages" :key="page.id" class="nav-link" :href="'#' + page.id"
+                        :class="{ active: activePage === page.id }" @click="setActivePage(page.id),
+                        activePage = page.id"
+                    > {{ page.label }} </a>
                 </nav>
             </div>
             <div class="col how-page-content">
-
-                <div v-if="activePage == 'p1'">
-                    <Global/>
-                </div>
-                <div v-if="activePage == 'p2'">
-                    <Contenu/>
-                </div>
-                <div v-if="activePage == 'p3'">
-                    <Modal/>
-                </div>
-                <div v-if="activePage == 'p4'">
-                    <Carrousel/>
-                </div>
-                <div v-if="activePage == 'p5'">
-                    <Clavier/>
-                </div>
-                <div v-if="activePage == 'p6'">
-                    <Medias/>
-                </div>
-                <div v-if="activePage == 'p7'">
-                    <Titres/>
-                </div>
-                <div v-if="activePage == 'p8'">
-                    <Listes/>
-                </div>
-                <div v-if="activePage == 'p9'">
-                    <Controles/>
-                </div>
-                <div v-if="activePage == 'p10'">
-                    <Tableaux/>
-                </div>
-                <div v-if="activePage == 'p11'">
-                    <Formulaires/>
-                </div>
-                <div v-if="activePage == 'p12'">
-                    <Apparence/>
-                </div>
-                <div v-if="activePage == 'p13'">
-                    <Animation/>
-                </div>
-                <div v-if="activePage == 'p14'">
-                    <ContrasteDesCouleurs/>
-                </div>
-                <div v-if="activePage == 'p15'">
-                    <MobileEtTactile/>
-                </div>
-                <div v-if="activePage == 'p16'">
-                    <Css/>
-                </div>
-                <div v-if="activePage == 'p17'">
-                    <Outils/>
-                </div>
+                <component :is="
+                activePage === 'p1' ? Global :
+                activePage === 'p2' ? Contenu :
+                activePage === 'p3' ? Modal :
+                activePage === 'p4' ? Carrousel :
+                activePage === 'p5' ? Clavier :
+                activePage === 'p6' ? Medias :
+                activePage === 'p7' ? Titres :
+                activePage === 'p8' ? Listes :
+                activePage === 'p9' ? Controles :
+                activePage === 'p10' ? Tableaux :
+                activePage === 'p11' ? Formulaires :
+                activePage === 'p12' ? Apparence :
+                activePage === 'p13' ? Animation :
+                activePage === 'p14' ? ContrasteDesCouleurs :
+                activePage === 'p15' ? MobileEtTactile :
+                activePage === 'p16' ? Css :
+                activePage === 'p17' ? Outils :
+                null" />
             </div>
         </div>
     </div>

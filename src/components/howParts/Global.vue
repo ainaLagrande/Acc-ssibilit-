@@ -1,10 +1,15 @@
 <script setup>
 import Accordion from 'primevue/accordion';
 import AccordionTab from 'primevue/accordiontab';
-
 </script>
 
 <template>
+
+
+
+
+
+
 
 
     <div class="how-parts-global">
@@ -19,6 +24,7 @@ import AccordionTab from 'primevue/accordiontab';
 
                     <AccordionTab header="Fournir un unique title pour chaque page ou vue.">
                         Cet élément du document est souvent la première information annoncée par la technologie d'assistance. Cela aide à dire aux gens quelle page ou vue ils vont commencer à naviguer.
+                        <img class="how-img" src="../../assets/images/title.png" alt="lang code">
                     </AccordionTab>
 
                     <AccordionTab header="Assurez-vous que le zoom de la fenêtre n'est pas désactivé.">
@@ -27,13 +33,13 @@ import AccordionTab from 'primevue/accordiontab';
 
                     <AccordionTab header="Utilisez des balises sémantiques pour indiquer les régions de contenu importantes">
                         Utilisez le nav élément pour envelopper la navigation d'un site et le main élément pour contenir le contenu principal d'une page. Le lecteur d'écran lit à voix haute chaque élément au fur et à mesure que vous progressez dans le contenu, vous notifiant ce qui est un paragraphe, ce qui est un titre, etc. Si le balisage non sémantique est requis dans le développement, utilisez  des éléments de repère.
+                        <img class="how-img" src="../../assets/images/semantique.png" alt="lang code">
                     </AccordionTab>
 
                     <AccordionTab header="Utilisez des éléments de repère (aria attributs) pour indiquer les régions de contenu importantes.">
                         Les régions repères aident à communiquer la mise en page et les zones importantes d'une page ou d'une vue, et peuvent permettre un accès rapide à ces régions. 
-                        Apprenez en plus dans <a href="https://openclassrooms.com/fr/courses/6691451-codez-un-site-web-accessible-avec-html-css/6964643-aidez-vos-utilisateurs-a-naviguer-sur-votre-site">ce chapitre </a>                     
+                        Apprenez en plus dans <a class="underline" href="https://openclassrooms.com/fr/courses/6691451-codez-un-site-web-accessible-avec-html-css/6964643-aidez-vos-utilisateurs-a-naviguer-sur-votre-site">ce chapitre </a>                     
                         <img class="how-img" src="../../assets/images/aria.png" alt="lang code">
-
                     </AccordionTab>
 
                     <AccordionTab header="Évitez d'utiliser l' autofocus attribut.">
@@ -45,7 +51,7 @@ import AccordionTab from 'primevue/accordiontab';
                     </AccordionTab>
 
                     <AccordionTab header="Supprimer title et les tooltips d'attribut.">
-                        Le title attribut présente de nombreux problèmes et ne doit pas être utilisé si les informations fournies sont importantes pour que tout le monde y ait accès. Une utilisation acceptable de l' title attribut consisterait à étiqueter un iframe élément pour indiquer le contenu qu'il contient.                   
+                        Le title attribut présente de nombreux problèmes et ne doit pas être utilisé si les informations fournies sont importantes pour que tout le monde y ait accès. Une utilisation acceptable de l'attribut title consisterait à étiqueter un iframe élément pour indiquer le contenu qu'il contient.                   
                     </AccordionTab>
 
                 </Accordion>
@@ -56,10 +62,6 @@ import AccordionTab from 'primevue/accordiontab';
 </template>
 
 <style lang="scss" scoped>
-
-.p-accordion-header-action{
-
-    
-}
-
 </style>
+
+

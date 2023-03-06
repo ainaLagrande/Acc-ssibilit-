@@ -12,6 +12,8 @@ import AccordionTab from 'primevue/accordiontab';
                 <Accordion :multiple="true">
                     <AccordionTab header="Utilisez des éléments de titre pour introduire le contenu.">
                         Les éléments d'en-tête construisent un plan de document et ne doivent pas être utilisés pour une conception purement visuelle
+                        <img class="how-img" src="../../assets/images/titre-claire.png" alt="lang code">
+                    
                     </AccordionTab>
                     <AccordionTab header="Utilisez un seul h1 élément par page ou vue.">
                         L' h1 élément doit être utilisé pour communiquer l'objectif général de la page ou de la vue. N'utilisez pas l' h1 élément pour un titre qui ne change pas entre les pages ou les vues (par exemple, le nom du site).
@@ -26,6 +28,8 @@ import AccordionTab from 'primevue/accordiontab';
             </div>
         </div>
     </div>
+
+    
 
 </template>
 

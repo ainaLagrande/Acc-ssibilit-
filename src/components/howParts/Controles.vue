@@ -22,8 +22,8 @@ import AccordionTab from 'primevue/accordiontab';
                     <AccordionTab header="Utilisez le button élément pour les boutons.">
                         Les boutons sont utilisés pour soumettre des données ou effectuer une action à l'écran qui ne modifie pas le focus du clavier. Vous pouvez ajouter type="button" à un button élément pour empêcher le navigateur de tenter de soumettre des informations de formulaire lorsqu'il est activé.
                     </AccordionTab>
-                    <AccordionTab header="Fournissez un lien de saut et assurez-vous qu'il est visible lorsqu'il est sélectionné.">
-                        Un lien de saut peut être utilisé pour fournir un accès rapide au contenu principal d'une page ou d'une vue. Cela permet à une personne de contourner facilement le contenu répété à l'échelle mondiale, tel que la navigation principale d'un site Web ou un widget de recherche persistant.
+                    <AccordionTab header="Fournissez skip link et assurez-vous qu'il est visible lorsqu'il est sélectionné.">
+                        Un skip link peut être utilisé pour fournir un accès rapide au contenu principal d'une page ou d'une vue. Cela permet à une personne de contourner facilement le contenu répété à l'échelle mondiale, tel que la navigation principale d'un site Web ou un widget de recherche persistant.
                     </AccordionTab>
                     <AccordionTab header="Identifiez les liens qui s'ouvrent dans un nouvel onglet ou une nouvelle fenêtre. ">
                         Idéalement, évitez les liens qui s'ouvrent dans un nouvel onglet ou une nouvelle fenêtre. Si un lien le fait, assurez-vous que le comportement du lien sera communiqué de manière évidente pour tous les utilisateurs. Cela aidera les gens à comprendre ce qui se passera avant d'activer le lien. Bien que cette technique ne soit techniquement pas requise pour la conformité, il s'agit d'un domaine de frustration souvent cité par de nombreux types d'utilisateurs de technologies d'assistance.

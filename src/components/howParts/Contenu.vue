@@ -14,9 +14,9 @@ import AccordionTab from 'primevue/accordiontab';
 
                     <AccordionTab header="Utilisez un langage simple et évitez les figures de style, les idiomes et les métaphores compliquées.">
                         Exemple: <br>
-                        <span class="italic">“Je ne regarderai ni l’or du soir qui tombe,Ni les voiles au loin descendant vers Harfleur”</span><br>
+                        <span class="italic">“L'efficacité des traitements palliatifs en matière de maladies dégénératives demeure relativement limitée, ce qui soulève des préoccupations quant à l'amélioration de la qualité de vie des patients atteints de ces maladies.”</span><br>
                         Alors qu’en simplifié ça fait : <br>
-                        <span class="italic">“J’ai le seum”</span>
+                        <span class="italic">“Les traitements qui soulagent les symptômes des maladies qui affectent progressivement le corps sont limités dans leur efficacité. Cette situation inquiète quant à la capacité d'améliorer la qualité de vie des patients atteints de ces maladies.”</span>
                     </AccordionTab>
 
                     <AccordionTab header=" Assurez-vous que le contenu des éléments button, a et label est unique et descriptif.">
@@ -28,10 +28,8 @@ import AccordionTab from 'primevue/accordiontab';
                     <AccordionTab header=" Alignez le texte à gauche ">
                         Utilisez du texte aligné à gauche pour les langues de gauche à droite et du texte aligné à droite pour les langues de droite à gauche 
                         Le texte centré ou justifié est difficile à lire,car ça peut entraîner l'affichage de grands espaces blancs entre les mots, ce qui ne facilite pas vraiment la lecture.
+                        <img class="how-img" src="../../assets/images/txt-gauche.png" alt="lang code">
                     </AccordionTab>
-
-
-
 
                 </Accordion>
             </div>
@@ -40,4 +38,8 @@ import AccordionTab from 'primevue/accordiontab';
 
 </template>
 
-<style lang="scss" scoped></style>
+<style lang="scss" scoped>
+
+
+
+</style>
