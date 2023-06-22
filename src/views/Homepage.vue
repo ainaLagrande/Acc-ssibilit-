@@ -15,7 +15,6 @@
             </div>
         </div>
     </div>
-
     
 </template>
 
@@ -59,3 +58,4 @@
     }
 }
 </style>
+

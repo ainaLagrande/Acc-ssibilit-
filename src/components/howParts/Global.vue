@@ -1,32 +1,21 @@
 <script setup>
-import { ref,onMounted } from 'vue';
+import { ref, onMounted, defineComponent } from 'vue';
 import Accordion from 'primevue/accordion';
 import AccordionTab from 'primevue/accordiontab';
-// import { openModal, closeModal} from "../../composables/modal";
+
+
+const handleClick = () => {
+  console.log('hello');
+  emit('customEvent');
+
+}
+
 
 
 // TODO: factoring des fonctions, ajouter un href sur les section ? , mettre les fonctions sur toutes les img 
-const accordionTabs = ref(null);
-const showModal = ref(false);
-const modalImage = ref('');
 
 
-  function openModal(image) {
-    showModal.value = true;
-    modalImage.value = image;
-  }
-
-  function closeModal() {
-    showModal.value = false;
-  }
-
-  onMounted(() => {
-    if (accordionTabs.value) {
-      accordionTabs.value.querySelectorAll('.how-img-container').forEach((accordionTab) => {
-        accordionTab.addEventListener('click', () => openModal(accordionTab.querySelector('img').src));
-      });
-    }
-  });
+  
 </script> 
 
 <template>
@@ -34,19 +23,12 @@ const modalImage = ref('');
     <div class="how-parts-box">
       <div class="how-parts-item">
         <Accordion>
-          <div id="test" class="test" dataChapitreId="1" ref="accordionTabs">
-            <AccordionTab :header="'Fournir un titre unique pour chaque page ou vue.'">
-              <p>
+              <AccordionTab :header="'Fournir un titre unique pour chaque page ou vue.'" @click="handleClick" >
+              <p >
                 Cet élément du document est souvent la première information annoncée par la technologie d'assistance. Cela aide à dire aux gens quelle page ou vue ils vont commencer à naviguer.
               </p>
-              <div class="how-img-container" @click="openModal('../../../src/assets/images/title.png')">
-                <img class="how-img" src="../../../src/assets/images/title.png" alt="lang code" />
-              </div>
-              <div class="how-img-container" @click="openModal('../../../src/assets/images/ul.png')">
-                <img class="how-img" src="../../../src/assets/images/ul.png" alt="lang code" />
-              </div>
+
             </AccordionTab>
-          </div>
         </Accordion>
       </div>
     </div>
@@ -55,6 +37,8 @@ const modalImage = ref('');
       <img class="modal-content" :src="modalImage" />
     </div>
   </div>
+
+
 </template>
 
 
