@@ -1,30 +1,10 @@
-.how-header{
-    height: 11rem;
-    background-color: $secondary;
-    opacity: 0.8;
-    color: $white;
-    background-image: url(../images/header.png);
-    background-repeat: no-repeat;
-    background-size: cover;
-    // background-size: 100% 100%;
-    background-position: center;
-    .how-header-title{
-        width: 100%;
-        height: 100%;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        font-size: 4rem;
-    }
-}
-
 //Content 
 .container{
     max-width: 100%;
     // Nav
     .how-sidebar{
         width: 20rem;
-        height: 100vh;
+        height: fit-content;
         background-color: $secondary;
         a{
             color: $white;
