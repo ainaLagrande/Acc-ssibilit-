@@ -28,3 +28,9 @@ $white:#ffff;
     font-weight: bold;
 
 }
+a{
+    &:hover{
+        text-decoration: none;
+        color: #AB2DFF;
+    }
+}

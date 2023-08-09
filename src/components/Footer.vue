@@ -20,6 +20,7 @@ footer{
     height: 5rem;    
     border-width: 50%;
     hr{
+        margin: 0;
         width: 95%;
         background-color: black;
     }

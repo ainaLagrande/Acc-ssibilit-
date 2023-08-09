@@ -5,7 +5,9 @@
 
 .container-items{
 	display: flex;
-	justify-content: space-around;
+	justify-content: space-between;
+	flex-wrap: wrap;
+	margin-bottom: 5rem;
 }
 
 .checklist-gloabal-container {
@@ -36,17 +38,53 @@
 	
 }
 .checklist-gloabal-container .checklist {
-	min-width: 350px;
-	max-width: 400px;
-	margin: 15px 15px 0;
-	box-shadow: 0px 3px 6px #00000029;
-	border-radius: 20px;
-	height: 20rem;
-	padding: 1rem;
+    min-width: 350px;
+    max-width: 400px;
+    margin: 15px 15px 0;
+    box-shadow: 0px 3px 6px #00000029;
+    border-radius: 20px;
+    height: 20rem;
+    padding: 1rem;
+    width: 30%;
+    overflow-x: hidden;
+    overflow-y: auto; /* to ensure vertical scrolling */
 }
+
+/* Webkit browsers like Chrome, Safari */
+.checklist-gloabal-container .checklist::-webkit-scrollbar {
+    width: 7px;  /* width of the entire scrollbar */
+}
+
+.checklist-gloabal-container .checklist::-webkit-scrollbar-track {
+    background-color: #F7F7F7;  /* color of the tracking area */
+    border-radius: 10px;
+}
+
+.checklist-gloabal-container .checklist::-webkit-scrollbar-thumb {
+    background-color: $secondary;  /* color of the scroll thumb */
+    border-radius: 10px;
+}
+
+.checklist-gloabal-container .checklist::-webkit-scrollbar-thumb:hover {
+    background-color: $primary;  /* color of the scroll thumb on hover */
+}
+
+/* Firefox */
+.checklist-gloabal-container .checklist {
+    scrollbar-width: thin;  /* "thin" or "auto" or "none" */
+    scrollbar-color: $secondary #F7F7F7;  /* thumb and track color */
+}
+
+/* IE and Edge */
+.checklist-gloabal-container .checklist {
+    -ms-overflow-style: none;  /* hides the default scrollbar */
+}
+
+
 .checklist-gloabal-container .checklist .checklist-container {
 	margin: 0;
-	padding: 0;
+	// padding: 0;
+	padding: 1rem;
 }
 .checklist__title {
 	font-size: 2.125em;
@@ -59,7 +97,7 @@
 	display: block;
 	width: 350px;
 	margin-top: 8px;
-	border-bottom: 2px solid #21acb3;
+	border-bottom: 2px solid $secondary;
 	-webkit-box-shadow: 0 15px 15px -15px rgba(33, 16, 118, .5);
 	box-shadow: 0 15px 15px -15px rgba(33, 16, 118, .5);
 }
