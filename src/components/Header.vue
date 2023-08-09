@@ -7,7 +7,9 @@
             <li><router-link to="/what">Quoi</router-link></li>
             <li><router-link to="/how">Comment</router-link></li>
             <li><router-link to="/checklist">Checklist</router-link></li>
+            <li><router-link to="/demo">Démo</router-link></li>
         </ul>
+        
         <h1 class="moon"><router-link to="/"><img src="../assets/images/🦆 icon _moon_.png" alt="lune"></router-link></h1>
     </nav>
   </header>

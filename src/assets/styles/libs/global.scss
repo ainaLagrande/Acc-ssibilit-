@@ -12,6 +12,7 @@ $secondary: #A5A5FB;
 $tertionary: #AB2DFF;
 $white:#ffff; 
 
+
 .italic{
     font-style: italic;
 }
@@ -20,7 +21,7 @@ $white:#ffff;
     color: $tertionary;
 }
 .main-container {
-    height: 80vh;
+    height: 100%;
 }
 .bold-txt{
     text-transform: lowercase!important;

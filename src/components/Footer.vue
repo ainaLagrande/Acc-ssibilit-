@@ -18,7 +18,14 @@
 footer{
     width: 100%;
     height: 5rem;    
-    border-width: 50%;
+    // border-width: 50%;
+    margin-top: auto;
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+    background-color: var(--footer-bg,#000);
+    color: var(--footer-color,#fff);
+    font-size: 0.75rem;
+    display: block;
     hr{
         margin: 0;
         width: 95%;

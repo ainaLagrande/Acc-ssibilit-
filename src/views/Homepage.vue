@@ -52,7 +52,7 @@
         display: flex;
         justify-content: flex-end;
         img{
-            width: 70%;
+            // width: 70%;
             height: 100%;
         }
     }
