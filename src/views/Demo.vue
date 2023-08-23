@@ -11,13 +11,15 @@ const toggleDarkMode = () => {
 onMounted(() => {
   if (!isDarkMode.value) {
     // Définir des valeurs par défaut pour les variables CSS
-    document.body.style.setProperty('--body-bg-color', 'red');
+    document.body.style.setProperty('--body-bg-color', '#ffffff');
     document.body.style.setProperty('--theme-bg-color', '#ffffff');
     document.body.style.setProperty('--border-color', '#000000');
     document.body.style.setProperty('--header-bg-color', '#ffffff');
     document.body.style.setProperty('--main-color', '#000000');
     document.body.style.setProperty('--body-color', '#000000');
+
   }
+
 });
 
 </script>
@@ -50,34 +52,32 @@ onMounted(() => {
 </template>
 
 <style lang="scss" scoped>
-
-.dark-mode {
- --body-bg-color: #1e222b;
- --theme-bg-color: #212835;
- --border-color: #393f50;
- --header-bg-color: #323a4b;
- --main-color: #fefffd;
- --body-color: #dddee0;
- background-color: red!important;
-}
 body {
+    --body-font: "Arial, sans-serif"; // Assurez-vous d'avoir une police par défaut.
+    --body-bg-color: #ffffff;
+    --theme-bg-color: #ffffff;
+    --border-color: #000000;
+    --header-bg-color: #ffffff;
+    --main-color: #000000;
+    --body-color: #000000;
+
     font-family: var(--body-font);
     font-size: 15px;
     color: var(--body-color);
     background-color: var(--body-bg-color);
     margin: 0;
     font-weight: 600;
-    min-height: -webkit-fill-available;
+    min-height: 100vh; // Corrigé pour une meilleure compatibilité
 }
-body {
-    --body-bg-color: red; /* Couleur d'arrière-plan par défaut */
-    --theme-bg-color: #ffffff;
-    --border-color: #000000; /* Couleur de bordure par défaut */
-    --header-bg-color: #ffffff;
-    --main-color: #000000;
-    --body-color: #000000;
 
-    // ... (le reste du style pour body)
+.dark-mode {
+    --body-bg-color: #1e222b;
+    --theme-bg-color: #212835;
+    --border-color: #393f50;
+    --header-bg-color: #323a4b;
+    --main-color: #fefffd;
+    --body-color: #dddee0;
+    background-color: red!important;
 }
 
 .dark-light {
