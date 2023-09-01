@@ -1,122 +1,105 @@
-<template>
-    <div class="filter-demo">
-        <button @click="showFilter = !showFilter" :class="{'open-filter': showFilter, 'close-filter': !showFilter}">Filtres</button>
-        <div v-if="showFilter" class="block-filter">
-            <div v-for="(item, index) in arrayFilter">
-                <span>{{ item.patho }}</span>
-                <input :id="'filter-patho'+index" type="checkbox" @click="choiseElement(item.class)"/>
-                <label :for="'filter-patho'+index" />
-            </div>
-        </div>
-    </div>
-    <div class="demo" v-for="item in arrayContentDemo" :class="arrayElement">
-        <h1>{{ item.title }}</h1>
-        <div v-html="item.element"></div>
-    </div>
-
-    <!-- <div class="dark-light" @click="toggleDarkMode">
-        <svg viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round">
-        <path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z" />
-        </svg>
-    </div> -->
-
-</template>
-
 <script setup>
 import { ref, onMounted } from 'vue'
 
-const isDarkMode = ref(false);
-const showFilter = ref(false);
-const arrayElement = ref([]);
+const isDarkMode = ref(false)
 
-const arrayFilter = [
-     {
-        patho: "Fatigue visuel",
-        class: "fatigue"
-     },
-     {
-        patho: "Daltonisme bleu",
-        class: "dalto-blue"
-     }
-]
-
-// const toggleDarkMode = () => {
-//   isDarkMode.value = !isDarkMode.value
-//   document.body.classList.toggle('dark-mode', isDarkMode.value)
-// }
-
-const arrayContentDemo = [
-    {
-        title: "titre",
-        element: `<h1>Je suis un titre h1</h1>`
-    },
-    {
-        title: "les boutons",
-        element: `<button>Bouton</button>`
-    }
-]
-
-
-function choiseElement(el) {
-    if (arrayElement.value.includes(el)) {
-        const index = arrayElement.value.indexOf(el);
-        if (index > -1) {
-            arrayElement.value.splice(index, 1);
-        }
-    } else {
-        arrayElement.value.push(el);
-    }
+const toggleDarkMode = () => {
+  isDarkMode.value = !isDarkMode.value
+  document.body.classList.toggle('dark-mode', isDarkMode.value)
 }
 
-// onMounted(() => {
-//   if (!isDarkMode.value) {
-//     // Définir des valeurs par défaut pour les variables CSS
-//     document.body.style.setProperty('--body-bg-color', '#ffffff');
-//     document.body.style.setProperty('--theme-bg-color', '#ffffff');
-//     document.body.style.setProperty('--border-color', '#000000');
-//     document.body.style.setProperty('--header-bg-color', '#ffffff');
-//     document.body.style.setProperty('--main-color', '#000000');
-//     document.body.style.setProperty('--body-color', '#000000');
+onMounted(() => {
+  if (!isDarkMode.value) {
+    // Définir des valeurs par défaut pour les variables CSS
+    document.body.style.setProperty('--body-bg-color', '#ffffff');
+    document.body.style.setProperty('--theme-bg-color', '#ffffff');
+    document.body.style.setProperty('--border-color', '#000000');
+    document.body.style.setProperty('--header-bg-color', '#ffffff');
+    document.body.style.setProperty('--main-color', '#000000');
+    document.body.style.setProperty('--body-color', '#000000');
 
-//   }
+  }
 
-// });
+});
 
 </script>
 
+
+<template>
+    <div class="how-container main-container">
+        <div class="how-box">
+        </div>
+    </div>
+    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Sunt, et doloremque in vero harum ad commodi excepturi quae tempore atque obcaecati, beatae qui, amet earum repellat. Deleniti delectus dolore nemo?</p>
+    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Sunt, et doloremque in vero harum ad commodi excepturi quae tempore atque obcaecati, beatae qui, amet earum repellat. Deleniti delectus dolore nemo?</p>
+    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Sunt, et doloremque in vero harum ad commodi excepturi quae tempore atque obcaecati, beatae qui, amet earum repellat. Deleniti delectus dolore nemo?</p>
+    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Sunt, et doloremque in vero harum ad commodi excepturi quae tempore atque obcaecati, beatae qui, amet earum repellat. Deleniti delectus dolore nemo?</p>
+    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Sunt, et doloremque in vero harum ad commodi excepturi quae tempore atque obcaecati, beatae qui, amet earum repellat. Deleniti delectus dolore nemo?</p>
+    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Sunt, et doloremque in vero harum ad commodi excepturi quae tempore atque obcaecati, beatae qui, amet earum repellat. Deleniti delectus dolore nemo?</p>
+    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Sunt, et doloremque in vero harum ad commodi excepturi quae tempore atque obcaecati, beatae qui, amet earum repellat. Deleniti delectus dolore nemo?</p>
+    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Sunt, et doloremque in vero harum ad commodi excepturi quae tempore atque obcaecati, beatae qui, amet earum repellat. Deleniti delectus dolore nemo?</p>
+    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Sunt, et doloremque in vero harum ad commodi excepturi quae tempore atque obcaecati, beatae qui, amet earum repellat. Deleniti delectus dolore nemo?</p>
+    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Sunt, et doloremque in vero harum ad commodi excepturi quae tempore atque obcaecati, beatae qui, amet earum repellat. Deleniti delectus dolore nemo?</p>
+    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Sunt, et doloremque in vero harum ad commodi excepturi quae tempore atque obcaecati, beatae qui, amet earum repellat. Deleniti delectus dolore nemo?</p>
+    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Sunt, et doloremque in vero harum ad commodi excepturi quae tempore atque obcaecati, beatae qui, amet earum repellat. Deleniti delectus dolore nemo?</p>
+
+    <div class="dark-light" @click="toggleDarkMode">
+        <svg viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z" />
+        </svg>
+    </div>
+
+</template>
+
 <style lang="scss" scoped>
-  @import "@/assets/styles/demo.scss";
+body {
+    --body-font: "Arial, sans-serif"; // Assurez-vous d'avoir une police par défaut.
+    --body-bg-color: #ffffff;
+    --theme-bg-color: #ffffff;
+    --border-color: #000000;
+    --header-bg-color: #ffffff;
+    --main-color: #000000;
+    --body-color: #000000;
 
-// .dark-mode {
-//     --body-bg-color: #1e222b;
-//     --theme-bg-color: #212835;
-//     --border-color: #393f50;
-//     --header-bg-color: #323a4b;
-//     --main-color: #fefffd;
-//     --body-color: #dddee0;
-//     background-color: red!important;
-// }
+    font-family: var(--body-font);
+    font-size: 15px;
+    color: var(--body-color);
+    background-color: var(--body-bg-color);
+    margin: 0;
+    font-weight: 600;
+    min-height: 100vh; // Corrigé pour une meilleure compatibilité
+}
 
-// .dark-light {
-//  position: fixed;
-//  bottom: 30px;
-//  right: 30px;
-//  background-color: var(--header-bg-color);
-//  box-shadow: -1px 3px 8px -1px rgba(0, 0, 0, 0.2);
-//  padding: 8px;
-//  border-radius: 50%;
-//  z-index: 3;
-//  svg {
-//   width: 28px;
-//  }
-// }
+.dark-mode {
+    --body-bg-color: #1e222b;
+    --theme-bg-color: #212835;
+    --border-color: #393f50;
+    --header-bg-color: #323a4b;
+    --main-color: #fefffd;
+    --body-color: #dddee0;
+    background-color: red!important;
+}
 
-// .dark-mode .dark-light svg {
-//     fill: #ffce45;
-//     stroke: #ffce45;
-// }
-// .dark-light svg {
-//     fill: transparent;
-//     transition: 0.5s;
-// }
+.dark-light {
+ position: fixed;
+ bottom: 30px;
+ right: 30px;
+ background-color: var(--header-bg-color);
+ box-shadow: -1px 3px 8px -1px rgba(0, 0, 0, 0.2);
+ padding: 8px;
+ border-radius: 50%;
+ z-index: 3;
+ svg {
+  width: 28px;
+ }
+}
+
+.dark-mode .dark-light svg {
+    fill: #ffce45;
+    stroke: #ffce45;
+}
+.dark-light svg {
+    fill: transparent;
+    transition: 0.5s;
+}
 </style>
