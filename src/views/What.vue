@@ -2,8 +2,8 @@
 import { ref, onMounted, onBeforeUnmount, watchEffect, nextTick } from 'vue';
 
 const sections = ref([
-  { title: 'Introduction', content: 'JavaScript is essential.' },
-  { title: 'Body', content: 'Main content here.' },
+  { title: 'Handicap', content: "La première chose à laquelle on pense lorsqu'on entend le mot « accessibilité », c'est le handicap. Or, dans les faits, tout le monde rencontre des obstacles à l'accessibilité lorsque l'environnement ne répond pas à ses besoins.Nous parvenons mieux à supprimer certains obstacles que d'autres, non seulement au niveau technologique, mais aussi en termes de comportements associés. Par exemple, les lunettes sont un type de technologie d'assistance (TA). Bien que les personnes qui portent des lunettes en aient besoin pour se repérer dans le monde, elles se considèrent rarement comme atteintes d'un handicap. Cela est dû au fait qu'en plus d'être facilement accessibles. L'accessibilité sur le web est un sujet crucial pour garantir l'égalité des chances et permettre à tous les individus, quels que soient leurs capacités, de naviguer et d'utiliser les ressources en ligne de manière efficace et sans obstacles.Cela signifie que les sites web et les applications doivent être conçus et développés demanière à ce qu'ils soient accessibles à tous les utilisateurs, y compris ceux ayant des déficiences visuelles, auditives, motrices, cognitives ou autres.Les normes d'accessibilité sur le web ont été établies pour aider les concepteurs et les développeurs à atteindre cet objectif, en fournissant des directives spécifiques sur la manière de créer des sites web et des applications accessibles.L'un des moyens d'appréhender le handicap, c'est de le considérer comme une inadéquation entre la personne et son environnement. Cette inadéquation peut être permanente, temporaire ou situationnelle." },
+  { title: 'Body', content: `<h1>Je suis un titre h1</h1>` },
   { title: 'Another Section', content: 'More details.' },
   { title: 'Yet Another', content: 'Even more details.' },
   { title: 'Conclusion', content: 'No JavaScript: no good.' },
@@ -93,8 +93,9 @@ onBeforeUnmount(() => {
     <div ref="scrollContainer" class="scroll-container">
       <div v-for="(section, index) in sections" :key="index" class="child">
         <h2>{{ section.title }}</h2>
-        <p>{{ section.content }}</p>
+        <p class="what-txt" v-html="section.content"></p>
       </div>
+      
     </div>
   </div>
 </template>
@@ -141,5 +142,8 @@ onBeforeUnmount(() => {
       display: inline-block;
     }
   }
+}
+.what-txt{
+  font-family: Roboto;
 }
 </style>
