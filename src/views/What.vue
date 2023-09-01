@@ -11,9 +11,8 @@ import { Carousel, Slide, Navigation, Pagination } from 'vue3-carousel';
       <h3 class="how-header-title">QUOI?</h3>
     </header>
 
-      <div class="how-container">
+      <div class="how-container what-container">
         <div class="container">
-
           <div class="content-wrapper">
             <div class="child">
               <h1>CSS-only horizontal scroll tentative</h1>
@@ -50,9 +49,13 @@ import { Carousel, Slide, Navigation, Pagination } from 'vue3-carousel';
 
 <style lang="scss" scoped>
 
+.what-container{
+  position: relative;
+}
 .container {
-  position: fixed;
-  top: -30px; // Hide the horizontal scrollbar.
+  position: relative;
+  top: -160px; 
+  // top: 0;
   left: 0;
   width: 100vh;
   height: calc(100vw);
@@ -61,6 +64,17 @@ import { Carousel, Slide, Navigation, Pagination } from 'vue3-carousel';
   transform: rotate(-90deg);
   transform-origin: center calc(50vh);
 }
+/* Pour cacher la scrollbar pour tous les navigateurs */
+.container {
+  -ms-overflow-style: none;  /* pour IE et Edge */
+  scrollbar-width: none;  /* pour Firefox */
+}
+
+/* Pour cacher la scrollbar pour Chrome, Safari et Opera */
+.container::-webkit-scrollbar {
+  display: none;
+}
+
 
 .child {
   display: flex;
