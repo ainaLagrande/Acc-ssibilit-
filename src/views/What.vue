@@ -1,101 +1,108 @@
-<script setup>
-import 'vue3-carousel/dist/carousel.css';
-import { Carousel, Slide, Navigation, Pagination } from 'vue3-carousel';
-
-
-
-</script>
-
 <template>
-    <header class="how-header">
-      <h3 class="how-header-title">QUOI?</h3>
-    </header>
-
-      <div class="how-container what-container">
-        <div class="container">
-          <div class="content-wrapper">
-            <div class="child">
-              <h1>CSS-only horizontal scroll tentative</h1>
-              <p>The idea is to create an horizontal scroll layout and to allow the user to scroll up/down the mouse to scroll left/right.</p>
-              <p>So… please scroll <strong>down</strong> with your mouse.</p>
-            </div>
-
-            <div class="child">
-              <h2>The trick</h2>
-              <p>Rotate -90deg the container, and 90deg its children blocks.</p>
-              <p>You have to fix container and children dimensions. :(</p>
-              <p>See CSS for rather correct positioning.</p>
-            </div>
-
-            <div class="child">
-              <h2>Desktop browsers</h2>
-              <p>Vertical scroll… scrolls. :)</p>
-              <p>But horizontal scroll (e.g. with a trackpad) doesn’t. :(</p>
-            </div>
-
-            <div class="child">
-              <h2>Mobile browsers</h2>
-              <p>Only horizontal touchmove works on Chrome. :)</p>
-              <p>Only vertical touchmove works on Safari and Firefox. :(</p>
-            </div>
-            <div class="child">
-              <h2>Conclusion</h2>
-              <p>Without JavaScript: no good idea.</p>
-            </div>
-          </div>
-        </div>
+  <div id="what-container">
+    <div ref="scrollContainer" class="scroll-container">
+      <div v-for="(section, index) in sections" :key="index" class="child">
+        <h2>{{ section.title }}</h2>
+        <p>{{ section.content }}</p>
       </div>
+    </div>
+  </div>
 </template>
 
+<script setup>
+import { ref, onMounted, onBeforeUnmount, watchEffect } from 'vue';
+
+const sections = ref([
+  { title: 'Introduction', content: 'JavaScript is essential.' },
+  { title: 'Body', content: 'Main content here.' },
+  { title: 'Another Section', content: 'More details.' },
+  { title: 'Yet Another', content: 'Even more details.' },
+  { title: 'Conclusion', content: 'No JavaScript: no good.' },
+  { title: 'References', content: 'References go here.' },
+]);
+
+const scrollContainer = ref(null);
+let sectionWidth = 0;
+let currentSection = 0;
+let lastScrolled = 0; 
+
+watchEffect(() => {
+  if (scrollContainer.value && scrollContainer.value.firstElementChild) {
+    sectionWidth = scrollContainer.value.firstElementChild.offsetWidth;
+  }
+});
+
+const smoothScrollToSection = (sectionIndex) => {
+  if (sectionIndex < 0 || sectionIndex >= sections.value.length) return;
+  const target = sectionIndex * sectionWidth;
+  currentSection = sectionIndex;
+
+  scrollContainer.value.scrollTo({
+    left: target,
+    behavior: 'smooth'
+  });
+};
+
+const handleWheel = (event) => {
+  const now = Date.now();
+  // Ajout d'une condition pour ralentir le défilement (300ms entre chaque défilement)
+  if (now - lastScrolled < 300) {
+    return;
+  }
+  lastScrolled = now;
+
+  if (event.deltaY > 0) {
+    smoothScrollToSection(currentSection + 1);
+  } else {
+    smoothScrollToSection(currentSection - 1);
+  }
+};
+
+onMounted(() => {
+  //Cacher le scroll vertical suelement sur cette page
+  setTimeout(() => {
+    const appElement = document.getElementById('app');
+    if (appElement) {
+      appElement.style.overflow = 'hidden';
+    }
+  }, 0);
+  
+  if (scrollContainer.value) {
+    scrollContainer.value.addEventListener('wheel', handleWheel, { passive: true });
+  }
+});
+
+onBeforeUnmount(() => {
+  //Cacher le scroll vertical suelement sur cette page
+  const appElement = document.getElementById('app');
+  if (appElement) {
+    appElement.style.overflow = '';
+  }
+  if (scrollContainer.value) {
+    scrollContainer.value.removeEventListener('wheel', handleWheel);
+  }
+});
+</script>
+
 <style lang="scss" scoped>
-
-.what-container{
-  position: relative;
-}
-.container {
-  position: relative;
-  top: -160px; 
-  // top: 0;
-  left: 0;
-  width: 100vh;
-  height: calc(100vw);
-
-  overflow: scroll;
-  transform: rotate(-90deg);
-  transform-origin: center calc(50vh);
-}
-/* Pour cacher la scrollbar pour tous les navigateurs */
-.container {
-  -ms-overflow-style: none;  /* pour IE et Edge */
-  scrollbar-width: none;  /* pour Firefox */
+#what-container {
+  font-family: Avenir, Helvetica, Arial, sans-serif;
+  height: 100%;
+  overflow: hidden; 
 }
 
-/* Pour cacher la scrollbar pour Chrome, Safari et Opera */
-.container::-webkit-scrollbar {
-  display: none;
+.scroll-container {
+  display: flex;
+  overflow-x: scroll;
+  gap: 16px;
+  height: 100%;
 }
-
 
 .child {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-
-  margin: 1em auto;
-  padding: 2em;
-  width: 500px;
-  height: 500px;
-
-  transform: rotate(90deg);
-
-  border: 1px solid #333;
-  box-shadow: 3px 3px 6px rgba(#333, .3);
-
-  text-align: center;
-  
-  p {
-    line-height: 1.5;
-  }
+  flex: 0 0 auto;
+  width: 100vw; 
+  border: 1px solid #ccc;
+  padding: 16px;
+  box-sizing: border-box;
 }
 </style>
