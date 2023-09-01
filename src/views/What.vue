@@ -1,5 +1,5 @@
 <script setup>
-import { ref, onMounted, onBeforeUnmount, watchEffect } from 'vue';
+import { ref, onMounted, onBeforeUnmount, watchEffect, nextTick } from 'vue';
 
 const sections = ref([
   { title: 'Introduction', content: 'JavaScript is essential.' },
@@ -25,6 +25,7 @@ const smoothScrollToSection = (sectionIndex) => {
   if (sectionIndex < 0 || sectionIndex >= sections.value.length) return;
   const target = sectionIndex * sectionWidth;
   currentSection = sectionIndex;
+  localStorage.setItem('currentSection', currentSection); // Sauvegarder dans le localStorage
 
   scrollContainer.value.scrollTo({
     left: target,
@@ -34,7 +35,6 @@ const smoothScrollToSection = (sectionIndex) => {
 
 const handleWheel = (event) => {
   const now = Date.now();
-  // Ajout d'une condition pour ralentir le défilement (300ms entre chaque défilement)
   if (now - lastScrolled < 300) {
     return;
   }
@@ -48,21 +48,28 @@ const handleWheel = (event) => {
 };
 
 onMounted(() => {
-  //Cacher le scroll vertical suelement sur cette page
   setTimeout(() => {
     const appElement = document.getElementById('app');
     if (appElement) {
       appElement.style.overflow = 'hidden';
     }
   }, 0);
-  
+
   if (scrollContainer.value) {
     scrollContainer.value.addEventListener('wheel', handleWheel, { passive: true });
   }
+
+  // Utilisation de nextTick pour s'assurer que tous les éléments sont montés
+  nextTick(() => {
+    const savedSection = localStorage.getItem('currentSection');
+    if (savedSection !== null) {
+      smoothScrollToSection(Number(savedSection));
+    }
+  });
 });
 
+
 onBeforeUnmount(() => {
-  //Cacher le scroll vertical suelement sur cette page
   const appElement = document.getElementById('app');
   if (appElement) {
     appElement.style.overflow = '';
@@ -74,25 +81,23 @@ onBeforeUnmount(() => {
 </script>
 
 
+
 <template>
   <div id="what-container">
-      <!-- Pagination -->
-      <div class="pagination">
-        <button v-for="(section, index) in sections" :key="index" @click="smoothScrollToSection(index)">
-        <!-- Icône ou autre élément visuel -->
+    <!-- Pagination -->
+    <div class="pagination">
+      <button v-for="(section, index) in sections" :key="index" @click="smoothScrollToSection(index)">
         <span class="dot"></span>
       </button>
-      </div>
+    </div>
+    <!-- Sections -->
     <div ref="scrollContainer" class="scroll-container">
       <div v-for="(section, index) in sections" :key="index" class="child">
         <h2>{{ section.title }}</h2>
         <p>{{ section.content }}</p>
       </div>
     </div>
-    
   </div>
-
-
 </template>
 
 <style lang="scss" scoped>
