@@ -64,7 +64,7 @@ function choiseElement(el) {
 
 </script>
 
-<style lang="scss" scoped>
+<style lang="scss">
   @import "@/assets/styles/demo.scss";
 
 // .dark-mode {
