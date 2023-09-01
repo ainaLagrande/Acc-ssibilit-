@@ -111,4 +111,24 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  margin: 1rem 0;
+  $tailleAjoutee: null;
+
+  >h1 {
+    width: 90%;
+    border-bottom: 1px solid$primary;
+  }
+
+  &.fatigue {
+    $tailleAjoutee: 2rem;
+  }
+
+  div {
+    margin: 1rem;
+
+    h1 {
+      color: red;
+      font-size: if($tailleAjoutee !=null, 1.5rem + $tailleAjoutee, 1.5rem);
+    }
+  }
 }

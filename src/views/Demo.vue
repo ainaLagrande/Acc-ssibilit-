@@ -2,14 +2,14 @@
     <div class="filter-demo">
         <button @click="showFilter = !showFilter" :class="{'open-filter': showFilter, 'close-filter': !showFilter}">Filtres</button>
         <div v-if="showFilter" class="block-filter">
-            <div v-for="(item, index) in arrayFilter">
+            <div v-for="(item, index) in arrayFilter()">
                 <span>{{ item.patho }}</span>
                 <input :id="'filter-patho'+index" type="checkbox" @click="choiseElement(item.class)"/>
                 <label :for="'filter-patho'+index" />
             </div>
         </div>
     </div>
-    <div class="demo" v-for="item in arrayContentDemo" :class="arrayElement">
+    <div class="demo" v-for="item in arrayContentDemo()" :class="arrayElement">
         <h1>{{ item.title }}</h1>
         <div v-html="item.element"></div>
     </div>
@@ -23,38 +23,18 @@
 </template>
 
 <script setup>
-import { ref, onMounted } from 'vue'
+import { ref, onMounted } from 'vue';
+import arrayContentDemo from '@/utils/arrayContentDemo.js'
+import arrayFilter from '@/utils/arrayFilter.js'
 
 const isDarkMode = ref(false);
 const showFilter = ref(false);
 const arrayElement = ref([]);
 
-const arrayFilter = [
-     {
-        patho: "Fatigue visuel",
-        class: "fatigue"
-     },
-     {
-        patho: "Daltonisme bleu",
-        class: "dalto-blue"
-     }
-]
-
 // const toggleDarkMode = () => {
 //   isDarkMode.value = !isDarkMode.value
 //   document.body.classList.toggle('dark-mode', isDarkMode.value)
 // }
-
-const arrayContentDemo = [
-    {
-        title: "titre",
-        element: `<h1>Je suis un titre h1</h1>`
-    },
-    {
-        title: "les boutons",
-        element: `<button>Bouton</button>`
-    }
-]
 
 
 function choiseElement(el) {
