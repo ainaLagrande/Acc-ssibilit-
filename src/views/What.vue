@@ -1,14 +1,3 @@
-<template>
-  <div id="what-container">
-    <div ref="scrollContainer" class="scroll-container">
-      <div v-for="(section, index) in sections" :key="index" class="child">
-        <h2>{{ section.title }}</h2>
-        <p>{{ section.content }}</p>
-      </div>
-    </div>
-  </div>
-</template>
-
 <script setup>
 import { ref, onMounted, onBeforeUnmount, watchEffect } from 'vue';
 
@@ -77,12 +66,33 @@ onBeforeUnmount(() => {
   const appElement = document.getElementById('app');
   if (appElement) {
     appElement.style.overflow = '';
-  }
+  } 
   if (scrollContainer.value) {
     scrollContainer.value.removeEventListener('wheel', handleWheel);
   }
 });
 </script>
+
+
+<template>
+  <div id="what-container">
+      <!-- Pagination -->
+      <div class="pagination">
+        <button v-for="(section, index) in sections" :key="index" @click="smoothScrollToSection(index)">
+          {{ index + 1 }}
+        </button>
+      </div>
+    <div ref="scrollContainer" class="scroll-container">
+      <div v-for="(section, index) in sections" :key="index" class="child">
+        <h2>{{ section.title }}</h2>
+        <p>{{ section.content }}</p>
+      </div>
+    </div>
+    
+  </div>
+
+
+</template>
 
 <style lang="scss" scoped>
 #what-container {
@@ -101,8 +111,26 @@ onBeforeUnmount(() => {
 .child {
   flex: 0 0 auto;
   width: 100vw; 
+  height: 80%;
   border: 1px solid #ccc;
   padding: 16px;
   box-sizing: border-box;
+}
+.pagination {
+  // position: fixed;
+  // right: 16px;
+  // top: 50%;
+  // transform: translateY(-50%);
+  z-index: 1000;
+  margin: auto;
+  display: flex;
+  justify-content: center;
+
+  button {
+    display: block;
+    margin-bottom: 8px;
+    padding: 8px;
+    cursor: pointer;
+  }
 }
 </style>
