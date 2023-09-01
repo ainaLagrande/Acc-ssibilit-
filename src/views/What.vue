@@ -79,8 +79,9 @@ onBeforeUnmount(() => {
       <!-- Pagination -->
       <div class="pagination">
         <button v-for="(section, index) in sections" :key="index" @click="smoothScrollToSection(index)">
-          {{ index + 1 }}
-        </button>
+        <!-- Icône ou autre élément visuel -->
+        <span class="dot"></span>
+      </button>
       </div>
     <div ref="scrollContainer" class="scroll-container">
       <div v-for="(section, index) in sections" :key="index" class="child">
@@ -98,39 +99,46 @@ onBeforeUnmount(() => {
 #what-container {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   height: 100%;
-  overflow: hidden; 
+  overflow: hidden;
 }
 
 .scroll-container {
   display: flex;
   overflow-x: scroll;
   gap: 16px;
-  height: 100%;
+  height: calc(100% - 50px); /* Réduction pour faire de la place à la pagination */
 }
 
 .child {
   flex: 0 0 auto;
-  width: 100vw; 
+  width: 100vw;
   height: 80%;
   border: 1px solid #ccc;
   padding: 16px;
   box-sizing: border-box;
 }
+
 .pagination {
-  // position: fixed;
-  // right: 16px;
-  // top: 50%;
-  // transform: translateY(-50%);
   z-index: 1000;
   margin: auto;
   display: flex;
   justify-content: center;
+  position: absolute;
+  bottom: 5%;
+  width: 100%;
 
   button {
-    display: block;
-    margin-bottom: 8px;
-    padding: 8px;
-    cursor: pointer;
+    background: transparent;
+    border: none;
+    margin: 0 8px;
+
+    .dot {
+      height: 12px;
+      width: 12px;
+      background-color: #bbb;
+      border-radius: 50%;
+      display: inline-block;
+    }
   }
 }
 </style>
