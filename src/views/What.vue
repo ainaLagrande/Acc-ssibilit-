@@ -33,20 +33,17 @@ const smoothScrollToSection = (sectionIndex) => {
   });
 };
 
-
 const handleWheel = (event) => {
   const now = Date.now();
   if (now - lastScrolled < 300) {
     return;
   }
   lastScrolled = now;
-
   if (event.deltaY > 0) {
-  smoothScrollToSection(currentSection.value + 1);
-} else {
-  smoothScrollToSection(currentSection.value - 1);
-}
-
+    smoothScrollToSection(currentSection.value + 1);
+  } else {
+    smoothScrollToSection(currentSection.value - 1);
+  }
 };
 
 onMounted(() => {
@@ -68,8 +65,6 @@ onMounted(() => {
     }
   });
 });
-
-
 onBeforeUnmount(() => {
   const appElement = document.getElementById('app');
   if (appElement) {
@@ -110,23 +105,18 @@ onBeforeUnmount(() => {
   height: 100%;
   overflow: hidden;
 }
-
 .scroll-container {
   display: flex;
   overflow-x: scroll;
-  gap: 16px;
-  height: calc(100% - 50px); /* Réduction pour faire de la place à la pagination */
+  height: calc(100% - 50px);
 }
-
 .child {
   flex: 0 0 auto;
   width: 100vw;
   height: 80%;
-  border: 1px solid #ccc;
   padding: 16px;
   box-sizing: border-box;
 }
-
 .pagination {
   z-index: 1000;
   margin: auto;
@@ -135,16 +125,14 @@ onBeforeUnmount(() => {
   position: absolute;
   bottom: 5%;
   width: 100%;
-
-  .active .dot {
-  background-color: red; /* Ou n'importe quelle autre couleur */
-}
-
+  
   button {
     background: transparent;
     border: none;
     margin: 0 8px;
-
+    &.active .dot{
+      background-color: red; 
+    }
     .dot {
       height: 12px;
       width: 12px;
