@@ -12,7 +12,7 @@ const sections = ref([
 
 const scrollContainer = ref(null);
 let sectionWidth = 0;
-let currentSection = 0;
+let currentSection = ref(0);
 let lastScrolled = 0; 
 
 watchEffect(() => {
@@ -24,14 +24,15 @@ watchEffect(() => {
 const smoothScrollToSection = (sectionIndex) => {
   if (sectionIndex < 0 || sectionIndex >= sections.value.length) return;
   const target = sectionIndex * sectionWidth;
-  currentSection = sectionIndex;
-  localStorage.setItem('currentSection', currentSection); // Sauvegarder dans le localStorage
+  currentSection.value = sectionIndex;
+  localStorage.setItem('currentSection', currentSection.value);
 
   scrollContainer.value.scrollTo({
     left: target,
     behavior: 'smooth'
   });
 };
+
 
 const handleWheel = (event) => {
   const now = Date.now();
@@ -41,10 +42,11 @@ const handleWheel = (event) => {
   lastScrolled = now;
 
   if (event.deltaY > 0) {
-    smoothScrollToSection(currentSection + 1);
-  } else {
-    smoothScrollToSection(currentSection - 1);
-  }
+  smoothScrollToSection(currentSection.value + 1);
+} else {
+  smoothScrollToSection(currentSection.value - 1);
+}
+
 };
 
 onMounted(() => {
@@ -58,7 +60,6 @@ onMounted(() => {
   if (scrollContainer.value) {
     scrollContainer.value.addEventListener('wheel', handleWheel, { passive: true });
   }
-
   // Utilisation de nextTick pour s'assurer que tous les éléments sont montés
   nextTick(() => {
     const savedSection = localStorage.getItem('currentSection');
@@ -81,12 +82,15 @@ onBeforeUnmount(() => {
 </script>
 
 
-
 <template>
   <div id="what-container">
     <!-- Pagination -->
     <div class="pagination">
-      <button v-for="(section, index) in sections" :key="index" @click="smoothScrollToSection(index)">
+      <button 
+        v-for="(section, index) in sections" 
+        :key="index" 
+        @click="smoothScrollToSection(index)"
+        :class="{ 'active': currentSection === index }" >
         <span class="dot"></span>
       </button>
     </div>
@@ -131,6 +135,10 @@ onBeforeUnmount(() => {
   position: absolute;
   bottom: 5%;
   width: 100%;
+
+  .active .dot {
+  background-color: red; /* Ou n'importe quelle autre couleur */
+}
 
   button {
     background: transparent;
