@@ -1,0 +1,114 @@
+@import 'libs/global.scss';
+
+.filter-demo {
+  display: flex;
+  justify-content: flex-end;
+  padding: 1rem;
+  position: relative;
+
+  button {
+    border: none;
+    background-color: unset;
+    font-size: 1.5rem;
+    display: flex;
+    align-items: center;
+
+    &:hover {
+      color: $primary;
+    }
+
+    &:focus {
+      border: none;
+      outline: none;
+    }
+
+    &.close-filter {
+      &::after {
+        font-size: 2rem;
+        font-family: "Material Design Icons";
+        @include variable-icon-font(map-get($mdi-icons, chevron-right));
+      }
+    }
+
+    &.open-filter {
+      &::after {
+        font-size: 2rem;
+        font-family: "Material Design Icons";
+        @include variable-icon-font(map-get($mdi-icons, chevron-down));
+      }
+    }
+  }
+
+  .block-filter {
+    position: absolute;
+    z-index: 1;
+    right: 28px;
+    bottom: -84%;
+    padding: 0.5rem;
+    box-shadow: 0px 2px 4px #4B4B4B29;
+    display: flex;
+    flex-direction: column;
+
+    a {
+      padding: 0.5rem 0;
+    }
+
+    div {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: .5em;
+
+      &>span,
+      &>label {
+        display: block;
+      }
+
+      &>span {
+        transition: all .3s ease;
+      }
+
+      &>input[type="checkbox"]:checked+label {
+        background-color: $secondary;
+
+        &::after {
+          left: 48%;
+        }
+      }
+
+      &>label {
+        background-color: $primary;
+        border-radius: 4rem;
+        cursor: pointer;
+        width: 55px;
+        height: 30px;
+
+        &::after {
+          content: "";
+          background-color: white;
+          display: block !important;
+          position: relative;
+          left: 5px;
+          top: 3px;
+          color: $primary;
+          $size: 23px;
+          height: $size;
+          width: $size;
+
+          border-radius: 4rem;
+        }
+
+        &::before {
+          display: none;
+        }
+      }
+    }
+  }
+}
+
+.demo {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
