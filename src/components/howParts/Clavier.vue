@@ -12,7 +12,7 @@ import AccordionTab from 'primevue/accordiontab';
                 <Accordion :multiple="true">
                     <AccordionTab header="Assurez-vous qu'il existe un style de focus visible pour les éléments interactifs accessibles via la saisie au clavier.">
                         <p>Une personne qui navigue avec un clavier, un interrupteur , une commande vocale ou un lecteur d'écran peut-elle voir où elle se trouve actuellement sur la page ?</p>                        
-                        <img class="how-img" src="../../assets/images/focus.png" alt="lang code">
+                        <img class="how-img" src="../../assets/images/how-page/focus.png" alt="lang code">
                     </AccordionTab>
                     <AccordionTab header="Vérifiez que l'ordre de focus du clavier correspond à la disposition visuelle.">
                         <p>Une personne naviguant avec un clavier ou un lecteur d'écran peut-elle se déplacer sur la page de manière prévisible ?<br>

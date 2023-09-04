@@ -21,13 +21,13 @@ import AccordionTab from 'primevue/accordiontab';
                                 <li>Il est important de cacher la modale quand cette dernière n’est pas ouverte.</li>
                             </ul>
                         </p>
-                        <img class="how-img" src="../../assets/images/modal.png" alt="lang code">
+                        <img class="how-img" src="../../assets/images/how-page/modal.png" alt="lang code">
                     </AccordionTab>
 
                     <AccordionTab header="Décrivez le contenu de votre modale">
                         <p>Grâce à l’attribut  aria-describedby , vous allez pouvoir indiquer le sens de cette dernière. Par exemple, si c’est une fenêtre modale dédiée à l’inscription.
                         </p>
-                        <img class="how-img" src="../../assets/images/modalContent.png" alt="lang code">
+                        <img class="how-img" src="../../assets/images/how-page/modalContent.png" alt="lang code">
                     </AccordionTab>
 
                     <AccordionTab header="Fermer la modale">
@@ -40,10 +40,10 @@ import AccordionTab from 'primevue/accordiontab';
                                 <li>la gestion des touches clavier, et notamment la touche “Esc”.</li>
                             </ul>
                         </p>
-                        <img class="how-img" src="../../assets/images/modalContentOpen.png" alt="lang code">
+                        <img class="how-img" src="../../assets/images/how-page/modalContentOpen.png" alt="lang code">
                         <p>Quand la modale s’ouvre, en plus de mettre à jour les attributs `aria-hidden`, nous mettons le focus sur le bouton de fermeture de la modale (ce qui permet de la fermer avec la barre “espace”.) Ici, via le JavaScript, nous écoutons les touches du clavier pour pouvoir fermer la modale quand la touche Escape  est pressée.
                         </p>
-                        <img class="how-img" src="../../assets/images/modalEscape.png" alt="lang code">
+                        <img class="how-img" src="../../assets/images/how-page/modalEscape.png" alt="lang code">
                     </AccordionTab>
                 </Accordion>
             </div>

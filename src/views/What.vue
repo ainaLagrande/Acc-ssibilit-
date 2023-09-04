@@ -1,11 +1,11 @@
 <script setup>
 import { ref, onMounted, onBeforeUnmount, watchEffect, nextTick } from 'vue';
-import Handicap from '../components/whatParts/Handicap.vue';
-import Test from '../components/whatParts/Test.vue';
+import Slider1 from '../components/whatParts/Slider-1.vue';
+import Slider2 from '../components/whatParts/Slider-2.vue';
 
 const sections = ref([
   { title: 'Handicap' },
-  { title: 'Test'},
+  { title: 'Avantages qui profitent à tous'},
 ]);
 
 const scrollContainer = ref(null);
@@ -93,8 +93,8 @@ onBeforeUnmount(() => {
       <div v-for="(section, index) in sections" :key="index" class="child">
         <h2>{{ section.title }}</h2>
         <!-- Afficher le composants -->
-        <Handicap v-if="section.title === 'Handicap'" />
-        <Test v-if="section.title === 'Test'" />
+        <Slider1 v-if="section.title === 'Handicap'" />
+        <Slider2 v-if="section.title === 'Avantages qui profitent à tous'" />
       </div>
     </div>
   </div>

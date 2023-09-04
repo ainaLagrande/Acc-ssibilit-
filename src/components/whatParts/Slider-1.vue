@@ -33,10 +33,10 @@
       <tbody>
         <tr>
           <td class="row-empty"></td>
-          <th class="row-title"><img src="../../assets/images/main.webp" alt="main"></th>
-          <th class="row-title"><img src="../../assets/images/oeil.webp" alt="main"></th>
-          <th class="row-title"><img src="../../assets/images/oreille.webp" alt="main"></th>
-          <th class="row-title"><img src="../../assets/images/bouche.webp" alt="main"></th>
+          <th class="row-title"><img src="../../assets/images/what-page/main.webp" alt="main"></th>
+          <th class="row-title"><img src="../../assets/images/what-page/oeil.webp" alt="main"></th>
+          <th class="row-title"><img src="../../assets/images/what-page/oreille.webp" alt="main"></th>
+          <th class="row-title"><img src="../../assets/images/what-page/bouche.webp" alt="main"></th>
         </tr>
         <tr>
           <th class="col-title">Permanent</th>
@@ -116,5 +116,6 @@ td {
   font-family: Roboto;
   font-size: 1.2rem;
   line-height: 2rem;
+  
 }
 </style>

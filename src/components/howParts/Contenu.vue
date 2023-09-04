@@ -22,13 +22,13 @@ import AccordionTab from 'primevue/accordiontab';
 
                     <AccordionTab header=" Assurez-vous que le contenu des éléments button, a et label est unique et descriptif.">
                         <p>Des termes tels que « cliquez ici » et « en savoir plus » ne fournissent aucun contexte. Certaines personnes naviguent à l'aide d'une liste de tous les boutons ou liens d'une page ou d'une vue. Lorsque vous utilisez ce mode, les termes indiquent ce qui se passera en cas de navigation ou d'activation</p>
-                        <img class="how-img" src="../../assets/images/inputRechercher.png" alt="lang code">
+                        <img class="how-img" src="../../assets/images/how-page/inputRechercher.png" alt="lang code">
                     </AccordionTab>
 
                     <AccordionTab header=" Alignez le texte à gauche ">
                         <p>Utilisez du texte aligné à gauche pour les langues de gauche à droite et du texte aligné à droite pour les langues de droite à gauche 
                         Le texte centré ou justifié est difficile à lire,car ça peut entraîner l'affichage de grands espaces blancs entre les mots, ce qui ne facilite pas vraiment la lecture.</p>
-                        <img class="how-img" src="../../assets/images/txt-gauche.png" alt="lang code">
+                        <img class="how-img" src="../../assets/images/how-page/txt-gauche.png" alt="lang code">
                     </AccordionTab>
 
                 </Accordion>

@@ -18,7 +18,7 @@ import AccordionTab from 'primevue/accordiontab';
                     </AccordionTab>
                     <AccordionTab header="Supprimer le défilement horizontal">
                         <p>Exiger que quelqu'un fasse défiler horizontalement peut être difficile pour certains, irritant pour tous.</p>
-                        <img class="how-img" src="../../assets/images/hidden.png" alt="inputTypeRange code">
+                        <img class="how-img" src="../../assets/images/how-page/hidden.png" alt="inputTypeRange code">
                     </AccordionTab>
                     <AccordionTab header="Assurez-vous que les icônes de bouton et de lien peuvent être activées facilement.">
                        <p> Il est bon de s'assurer que des éléments tels que les menus hamburger, les icônes sociales, les visionneuses de galerie et d'autres commandes tactiles sont utilisables par une large gamme de tailles de mains et de stylets.<br>

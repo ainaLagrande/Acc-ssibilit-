@@ -16,7 +16,7 @@ import AccordionTab from 'primevue/accordiontab';
                         Évitez les mauvaises pratiques
                         Dans l’exemple ci-dessous, ce texte va être affiché à l’écran, sera lisible mais n'apparaîtra pas côté HTML. Autrement dit, les technologies d'assistance n’ont aucun moyen de savoir que ce texte existe.</p>
                         
-                        <img class="how-img" src="../../assets/images/css.png" alt="lang code">
+                        <img class="how-img" src="../../assets/images/how-page/css.png" alt="lang code">
                     </AccordionTab>
                 </Accordion>
             </div>
