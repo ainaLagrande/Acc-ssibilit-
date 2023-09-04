@@ -4,14 +4,6 @@ import AccordionTab from 'primevue/accordiontab';
 </script>
 
 <template>
-
-
-
-
-
-
-
-
     <div class="how-parts-global">
         <div class="how-parts-box">
             <div class="how-parts-item">
