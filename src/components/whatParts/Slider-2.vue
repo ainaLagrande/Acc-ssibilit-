@@ -20,7 +20,6 @@
 
 <template>
   <div class="container">
-    <h3 class="title">Prenez conscience des avantages de l’inclusif</h3>
     <div class="slider">
       <div class="slider__content" ref="slider" @scroll="handleScroll">
         <div class="slider__item">
@@ -97,12 +96,12 @@
   font-weight: 300;
   margin: 4rem auto 1rem;
   width: 100%;
-  max-width: 1480px;
+  max-width: 70%;
 }
 
 .slider {
   width: 100%;
-  max-width: 1480px;
+  max-width: 70%;
   margin: 0 auto;
 }
 .slider__content {

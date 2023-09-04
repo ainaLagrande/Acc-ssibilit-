@@ -58,14 +58,16 @@
 
   
 <style lang="scss" scoped>
+
+.container {
+  padding-bottom: 15rem;
+}
 .highlight {
   border: 1px solid #ddd;
   background-color: #ddd;
   padding: 20px 20px;
   border-radius: 5px;
 }
-
-
 table {
   border-collapse: separate;
   border-spacing: 10px 10px;
@@ -73,38 +75,39 @@ table {
   font-size: 18px;
   margin: auto;
   width: 60%;
+  height: 100%;
 }
-
-
 th, td {
   padding: 8px 12px;
   border: 1px solid #e1e1e1;
   text-align: left;
 }
-
 td {
   background-color: #ffffff;
 }
-
 .col-row-elements {
   background-color: #f7f7f7;
   font-weight: 400;
-
 }
-.col-title{
-  width: 10rem;
-  height: 10rem;
+.col-title {
+  width: 15%;        // Exemple de pourcentage.
+  max-width: 20rem;  // La largeur maximale est de 20rem.
+  min-width: 10rem;  // Assurez-vous que cela ne devienne pas trop petit.
+  height: 8rem;      // Vous pouvez ajuster ceci selon vos besoins.
   font-weight: 500;
 }
-.row-title{
-  width: 7rem;
-  height: 11rem;
 
-  img{
-    max-width: 30%;
+.row-title {
+  width: 10%;        // Exemple de pourcentage.
+  max-width: 15rem;  // La largeur maximale est de 15rem.
+  min-width: 8rem;   // Assurez-vous que cela ne devienne pas trop petit.
+  height: 8rem;
+
+  img {
+    max-width: 60%;  // Ajusté pour être proportionnellement plus grand.
     height: auto;
     margin: auto;
-    display: flex;
+    display: block;  // Utilisez block pour centrer avec margin auto.
   }
 }
 
@@ -118,4 +121,5 @@ td {
   line-height: 2rem;
   
 }
+
 </style>

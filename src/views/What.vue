@@ -5,7 +5,7 @@ import Slider2 from '../components/whatParts/Slider-2.vue';
 
 const sections = ref([
   { title: 'Handicap' },
-  { title: 'Avantages qui profitent à tous'},
+  { title: 'Prenez conscience des avantages de l’inclusif'},
 ]);
 
 const scrollContainer = ref(null);
@@ -37,12 +37,18 @@ const handleWheel = (event) => {
     return;
   }
   lastScrolled = now;
-  if (event.deltaY > 0) {
+  
+  const currentChild = scrollContainer.value.children[currentSection.value];
+  const atBottomEnd = currentChild.scrollTop + currentChild.offsetHeight >= currentChild.scrollHeight;
+  const atTopEnd = currentChild.scrollTop === 0;
+  
+  if (event.deltaY > 0 && atBottomEnd) {
     smoothScrollToSection(currentSection.value + 1);
-  } else {
+  } else if (event.deltaY < 0 && atTopEnd && currentSection.value !== 0) {
     smoothScrollToSection(currentSection.value - 1);
   }
 };
+
 
 onMounted(() => {
   setTimeout(() => {
@@ -94,7 +100,7 @@ onBeforeUnmount(() => {
         <h2>{{ section.title }}</h2>
         <!-- Afficher le composants -->
         <Slider1 v-if="section.title === 'Handicap'" />
-        <Slider2 v-if="section.title === 'Avantages qui profitent à tous'" />
+        <Slider2 v-if="section.title === 'Prenez conscience des avantages de l’inclusif'" />
       </div>
     </div>
   </div>
@@ -107,19 +113,26 @@ onBeforeUnmount(() => {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   height: 100%;
   overflow: hidden;
+
 }
 .scroll-container {
   display: flex;
-  overflow-x: scroll;
+  overflow-y: scroll;
   height: calc(100% - 50px);
+  ::-webkit-scrollbar {
+    width: 0;
+    background: transparent;
+  }
 }
+
 .child {
   flex: 0 0 auto;
   width: 100vw;
-  height: 80%;
   padding: 16px;
   box-sizing: border-box;
+  overflow-y: auto; 
 }
+
 .pagination {
   z-index: 1000;
   margin: auto;
