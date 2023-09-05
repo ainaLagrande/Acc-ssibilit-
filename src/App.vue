@@ -4,8 +4,8 @@ import Footer from './components/Footer.vue'
 import Homepage from './views/Homepage.vue'
 import What from './views/What.vue'
 import  './assets/styles/style.scss'
-
-
+import 'bootstrap/dist/css/bootstrap.min.css'
+import 'bootstrap'
 
 
 </script>

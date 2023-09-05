@@ -93,91 +93,171 @@ const activeOrder = ref(1);  // Supposons que la première diapositive est activ
 function activateSlide(order) {
   activeOrder.value = order;
 }
+// Tooltip 
 const showTooltips = ref({});
+const stickyTooltip = ref(null);
+
+const handleMouseOver = (text) => {
+  if (stickyTooltip.value !== text) {
+    showTooltips.value[text] = true;
+  }
+};
+
+const handleMouseLeave = (text) => {
+  if (stickyTooltip.value !== text) {
+    showTooltips.value[text] = false;
+  }
+};
+
+const handleClick = (text) => {
+  stickyTooltip.value = text;
+  for (const key in showTooltips.value) {
+    showTooltips.value[key] = false;
+  }
+  showTooltips.value[text] = true;
+};
 
 </script>
 
 <template>
+
+
+<div class="row">
+  <div class="col-sm-4">
+    <div class="card">
+      <div class="card-body">
+        <h5 class="card-title">Special title treatment</h5>
+        <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+        <a href="#" class="btn btn-primary">Go somewhere</a>
+      </div>
+    </div>
+  </div>
+  <div class="col-sm-4">
+    <div class="card">
+      <div class="card-body">
+        <h5 class="card-title">Special title treatment</h5>
+        <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+        <a href="#" class="btn btn-primary">Go somewhere</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="col-sm-4">
+    <div class="card">
+      <div class="card-body">
+        <h5 class="card-title">Special title treatment</h5>
+        <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+        <a href="#" class="btn btn-primary">Go somewhere</a>
+      </div>
+    </div>
+  </div>
+</div>
+
     <div class="slider-wrapper">
         <div class="slider">
-            <div class="slide-navigation__squares">
-                <div class="squares-wrapper">
-                    <div class="squares-slider">
-                        <span class="square"></span>
-                        <span class="square"></span>
-                        <span class="square red"></span>
-                        <span class="square"></span>
-                        <span class="square"></span>
-                    </div>
-                </div>
-
-                <div class="slides-container">
-                    <div class="slide-wrapper">
-                        <div v-for="slide in slides" :key="slide.order" class="slide" :class="{ 'active-slide': activeOrder === slide.order }">
-
+            <div class="slides-container">
+                <div class="slide-wrapper ">
+                    <div v-for="slide in slides" :key="slide.order" class="slide" :class="{ 'active-slide': activeOrder === slide.order }">
+                        <div class="slide-item">
                             <h4 class="niveau-title">Niveau A</h4>
                             <ul v-if="slide.niveauA.length">
-                                <li  v-for="item in slide.niveauA" :key="item.text"
-                                    @mouseover="showTooltips[item.text] = true"
-                                    @mouseleave="showTooltips[item.text] = false" >
+                                <li v-for="item in slide.niveauA" :key="item.text"
+                                    @mouseover="handleMouseOver(item.text)"
+                                    @mouseleave="handleMouseLeave(item.text)"
+                                    @click="handleClick(item.text)"
+                                    :class="{ 'active': stickyTooltip === item.text }">
                                     {{ item.text }}
                                     <div v-if="showTooltips[item.text]" class="tooltip-content">
-                                    <p>{{ item.tooltip }}</p>
-                                    </div>
-                                </li>
-                            </ul>
-                            <h4 class="niveau-title">Niveau AA</h4>
-                            <ul v-if="slide.niveauAA.length">
-                                <li  v-for="item in slide.niveauAA" :key="item.text"
-                                    @mouseover="showTooltips[item.text] = true"
-                                    @mouseleave="showTooltips[item.text] = false" >
-                                    {{ item.text }}
-                                    <div v-if="showTooltips[item.text]" class="tooltip-content">
-                                    <p>{{ item.tooltip }}</p>
-                                    </div>
-                                </li>
-                            </ul>
-
-                            <h4 class="niveau-title">Niveau AAA</h4>
-                            <ul v-if="slide.niveauAAA.length">
-                                <li  v-for="item in slide.niveauAAA" :key="item.text"
-                                    @mouseover="showTooltips[item.text] = true"
-                                    @mouseleave="showTooltips[item.text] = false" >
-                                    {{ item.text }}
-                                    <div v-if="showTooltips[item.text]" class="tooltip-content">
-                                    <p>{{ item.tooltip }}</p>
+                                        <p>{{ item.tooltip }}</p>
                                     </div>
                                 </li>
                             </ul>
                         </div>
+
+                        <div class="slide-item">
+                            <h4 class="niveau-title">Niveau AA</h4>
+                            <ul v-if="slide.niveauAA.length">
+                                <li v-for="item in slide.niveauAA" :key="item.text"
+                                    @mouseover="handleMouseOver(item.text)"
+                                    @mouseleave="handleMouseLeave(item.text)"
+                                    @click="handleClick(item.text)"
+                                    :class="{ 'active': stickyTooltip === item.text }">
+                                    {{ item.text }}
+                                    <div v-if="showTooltips[item.text]" class="tooltip-content">
+                                        <p>{{ item.tooltip }}</p>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+
+                        <div class="slide-item">
+                            <h4 class="niveau-title">Niveau AAA</h4>
+                            <ul v-if="slide.niveauAAA.length">
+                                <li v-for="item in slide.niveauAAA" :key="item.text"
+                                    @mouseover="handleMouseOver(item.text)"
+                                    @mouseleave="handleMouseLeave(item.text)"
+                                    @click="handleClick(item.text)"
+                                    :class="{ 'active': stickyTooltip === item.text }">
+                                    {{ item.text }}
+                                    <div v-if="showTooltips[item.text]" class="tooltip-content">
+                                        <p>{{ item.tooltip }}</p>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+
                     </div>
                 </div>
-  
-                <div class="slide-navigation__txt">
-                    <ul>
-                        <li v-for="slide in slides" :key="slide.order">
-                            <button :data-order="slide.order" @click="activateSlide(slide.order)">{{ slide.title }}</button>
-                        </li>
-                    </ul>
-                </div>
+            </div>
+            <div class="slide-navigation__txt">
+                <ul>
+                    <li v-for="slide in slides" :key="slide.order">
+                        <span  :data-order="slide.order"  @click="activateSlide(slide.order)" :class="{ active: activeOrder === slide.order }"> {{ slide.title }} </span>
+                    </li>
+                </ul>
             </div>
         </div>
     </div>
 </template>
 
 
-<style scoped>
+<style lang="scss" scoped>
+.niveau-title{
+    color: #AB2DFF;
+
+}
+.slide-item{
+    li{
+        list-style-type: none;
+        cursor: pointer;
+    }
+    li.active{
+        color: #AB2DFF;
+    }
+    ul{
+        padding: 0;
+        margin: 0;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        height: 100%;
+    }
+}
 .slide-wrapper .slide {
   display: none;
 }
-
 .slide-wrapper .active-slide {
-  display: block;
+  display: flex;
 }
-
+.active-slide{
+    display: flex;
+    justify-content: space-between;
+    width: 90%;
+    padding: 5rem;
+}
 .slider-wrapper {
   position: relative;
-  max-width: 90rem;
+  max-width: 80%;
   min-width: 480px;
   background: #fff;
   margin: 0 auto;
@@ -191,7 +271,7 @@ const showTooltips = ref({});
   padding: 5rem 0;
 }
 .slide-wrapper {
-  position: relative;
+//   position: relative;
   width: 100%;
   height: 100%;
 }
@@ -207,6 +287,47 @@ const showTooltips = ref({});
   display: flex;
   justify-content: space-between;
   top: 0;
+
+  li {
+    text-transform:uppercase;
+    letter-spacing:0.2rem;
+    margin: 0 1.2rem;
+    position:relative;
+    float:left;
+    font-size:1.2rem;
+    font-weight:600;
+    color:#A1A5B8;
+    span {
+        cursor:pointer;
+        transition: all 0.5s ease;
+        display:block;
+        &.active{
+        transform: scale(1.1, 1.1);
+        color: #3E018B;
+        }
+    }
+    }
 }
+.tooltip-content {
+    position: absolute;
+    z-index: 1;
+    background-color: #f9f9f9;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    padding: 5rem;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+    width: 80%;
+    bottom: 0;
+    left: 0;
+    left: 50%; 
+    transform: translate(-50%, -50%);
+    transition: all 0.5s ease;
+
+    p{
+        font-family: Avenir, Helvetica, Arial, sans-serif;
+        color: initial;
+    }
+}
+
 </style>
   
