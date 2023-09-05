@@ -59,7 +59,7 @@
         </div>
 
         <div class="slider__item">
-          <img class="slider__image" src="../../assets/images/what-page/avantages-6.jpg" alt="Image">
+          <img class="slider__image" src="../../assets/images/what-page/avantages-7.jpg" alt="Image">
           <div class="slider__info">
             <h2>Réduction des obstacles à l'apprentissage</h2>
           </div>
@@ -67,7 +67,7 @@
         </div>
 
         <div class="slider__item">
-          <img class="slider__image" src="../../assets/images/what-page/avantages-7.jpg" alt="Image">
+          <img class="slider__image" src="../../assets/images/what-page/avantages-6.jpg" alt="Image">
           <div class="slider__info">
             <h2>Conformité légale</h2>
           </div>
@@ -75,8 +75,8 @@
         </div>
       </div>
       <div class="slider__nav">
-        <button class="slider__nav__button" :class="{ 'slider__nav__button--active': !start }" @click="scroll(-1)">Previous</button>
-        <button class="slider__nav__button" :class="{ 'slider__nav__button--active': !end }" @click="scroll(1)">Next</button>
+        <button class="slider__nav__button" :class="{ 'slider__nav__button--active': !start }" @click="scroll(-1)">Précédent</button>
+        <button class="slider__nav__button" :class="{ 'slider__nav__button--active': !end }" @click="scroll(1)">Prochain</button>
       </div>
     </div>
   </div>
@@ -96,12 +96,12 @@
   font-weight: 300;
   margin: 4rem auto 1rem;
   width: 100%;
-  max-width: 70%;
+  max-width: 50%;
 }
 
 .slider {
   width: 100%;
-  max-width: 70%;
+  max-width: 50%;
   margin: 0 auto;
 }
 .slider__content {

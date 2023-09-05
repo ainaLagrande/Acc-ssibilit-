@@ -58,7 +58,6 @@
 
   
 <style lang="scss" scoped>
-
 .container {
   padding-bottom: 15rem;
 }
@@ -90,24 +89,24 @@ td {
   font-weight: 400;
 }
 .col-title {
-  width: 15%;        // Exemple de pourcentage.
-  max-width: 20rem;  // La largeur maximale est de 20rem.
-  min-width: 10rem;  // Assurez-vous que cela ne devienne pas trop petit.
-  height: 8rem;      // Vous pouvez ajuster ceci selon vos besoins.
+  width: 15%;
+  max-width: 20rem;
+  min-width: 10rem;
+  height: 8rem; 
   font-weight: 500;
 }
 
 .row-title {
-  width: 10%;        // Exemple de pourcentage.
-  max-width: 15rem;  // La largeur maximale est de 15rem.
-  min-width: 8rem;   // Assurez-vous que cela ne devienne pas trop petit.
+  width: 10%;
+  max-width: 15rem;
+  min-width: 8rem;
   height: 8rem;
 
   img {
-    max-width: 60%;  // Ajusté pour être proportionnellement plus grand.
+    max-width: 60%;
     height: auto;
     margin: auto;
-    display: block;  // Utilisez block pour centrer avec margin auto.
+    display: block;
   }
 }
 

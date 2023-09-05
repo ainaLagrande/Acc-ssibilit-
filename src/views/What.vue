@@ -2,10 +2,13 @@
 import { ref, onMounted, onBeforeUnmount, watchEffect, nextTick } from 'vue';
 import Slider1 from '../components/whatParts/Slider-1.vue';
 import Slider2 from '../components/whatParts/Slider-2.vue';
+import Slider3 from '../components/whatParts/Slider-3.vue';
+
 
 const sections = ref([
   { title: 'Handicap' },
   { title: 'Prenez conscience des avantages de l’inclusif'},
+  { title: 'Contenu Accéssible'},
 ]);
 
 const scrollContainer = ref(null);
@@ -101,6 +104,8 @@ onBeforeUnmount(() => {
         <!-- Afficher le composants -->
         <Slider1 v-if="section.title === 'Handicap'" />
         <Slider2 v-if="section.title === 'Prenez conscience des avantages de l’inclusif'" />
+        <Slider3 v-if="section.title === 'Contenu Accéssible'" />
+
       </div>
     </div>
   </div>
