@@ -1,5 +1,5 @@
 <script setup>
-import { ref } from 'vue';
+import { ref,reactive } from 'vue';
 
 const slides = [
   {
@@ -94,24 +94,25 @@ function activateSlide(order) {
   activeOrder.value = order;
 }
 // Tooltip 
-const showTooltips = ref({});
-const stickyTooltip = ref(null);
 
-const handleMouseOver = (text) => {
+const showTooltips = ref({});
+let stickyTooltip = ref(null);
+
+function handleMouseOver(text) {
   if (stickyTooltip.value !== text) {
     showTooltips.value[text] = true;
   }
 };
 
-const handleMouseLeave = (text) => {
+function handleMouseLeave(text){
   if (stickyTooltip.value !== text) {
     showTooltips.value[text] = false;
   }
 };
 
-const handleClick = (text) => {
+function handleClick(text){
   stickyTooltip.value = text;
-  for (const key in showTooltips.value) {
+  for (let key in showTooltips.value) {
     showTooltips.value[key] = false;
   }
   showTooltips.value[text] = true;
@@ -120,90 +121,79 @@ const handleClick = (text) => {
 </script>
 
 <template>
-
-
-<div class="row">
-  <div class="col-sm-4">
-    <div class="card">
-      <div class="card-body">
-        <h5 class="card-title">Special title treatment</h5>
-        <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-        <a href="#" class="btn btn-primary">Go somewhere</a>
-      </div>
-    </div>
-  </div>
-  <div class="col-sm-4">
-    <div class="card">
-      <div class="card-body">
-        <h5 class="card-title">Special title treatment</h5>
-        <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-        <a href="#" class="btn btn-primary">Go somewhere</a>
-      </div>
-    </div>
-  </div>
-
-  <div class="col-sm-4">
-    <div class="card">
-      <div class="card-body">
-        <h5 class="card-title">Special title treatment</h5>
-        <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-        <a href="#" class="btn btn-primary">Go somewhere</a>
-      </div>
-    </div>
-  </div>
-</div>
-
     <div class="slider-wrapper">
         <div class="slider">
             <div class="slides-container">
-                <div class="slide-wrapper ">
-                    <div v-for="slide in slides" :key="slide.order" class="slide" :class="{ 'active-slide': activeOrder === slide.order }">
-                        <div class="slide-item">
-                            <h4 class="niveau-title">Niveau A</h4>
-                            <ul v-if="slide.niveauA.length">
-                                <li v-for="item in slide.niveauA" :key="item.text"
-                                    @mouseover="handleMouseOver(item.text)"
-                                    @mouseleave="handleMouseLeave(item.text)"
-                                    @click="handleClick(item.text)"
-                                    :class="{ 'active': stickyTooltip === item.text }">
-                                    {{ item.text }}
-                                    <div v-if="showTooltips[item.text]" class="tooltip-content">
-                                        <p>{{ item.tooltip }}</p>
-                                    </div>
-                                </li>
-                            </ul>
+                <div class="slide-wrapper">
+                    <div v-for="slide in slides" :key="slide.order" class="slide row" :class="{ 'active-slide': activeOrder === slide.order }">
+                        <div class="slide-item col-sm-4">
+                            <div class="card">
+                                <div class="card-body">
+                                    <h4 class="niveau-title">Niveau A</h4>
+                                    <ul v-if="slide.niveauA.length">
+                                        <li v-for="item in slide.niveauA" :key="item.text"
+                                            @mouseover="handleMouseOver(item.text)"
+                                            @mouseleave="handleMouseLeave(item.text)"
+                                            @click="handleClick(item.text)"
+                                            :class="{ 'active': stickyTooltip === item.text }">
+                                            {{ item.text }}
+                                            <div class="card tooltip-content" :class="{ 'active': stickyTooltip === item.text }" v-if="showTooltips[item.text] || stickyTooltip === item.text">
+                                                <h5 class="card-header">{{ item.text }}</h5>
+                                                <div class="card-body">
+                                                    <p>{{ item.tooltip }}</p>
+                                                </div>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
                         </div>
 
-                        <div class="slide-item">
-                            <h4 class="niveau-title">Niveau AA</h4>
-                            <ul v-if="slide.niveauAA.length">
-                                <li v-for="item in slide.niveauAA" :key="item.text"
-                                    @mouseover="handleMouseOver(item.text)"
-                                    @mouseleave="handleMouseLeave(item.text)"
-                                    @click="handleClick(item.text)"
-                                    :class="{ 'active': stickyTooltip === item.text }">
-                                    {{ item.text }}
-                                    <div v-if="showTooltips[item.text]" class="tooltip-content">
-                                        <p>{{ item.tooltip }}</p>
-                                    </div>
-                                </li>
-                            </ul>
+                        <div class="slide-item col-sm-4">
+                            <div class="card">
+                                <div class="card-body">
+                                    <h4 class="niveau-title">Niveau AA</h4>
+                                    <ul v-if="slide.niveauAA.length">
+                                        <li v-for="item in slide.niveauAA" :key="item.text"
+                                            @mouseover="handleMouseOver(item.text)"
+                                            @mouseleave="handleMouseLeave(item.text)"
+                                            @click="handleClick(item.text)"
+                                            :class="{ 'active': stickyTooltip === item.text }">
+                                            {{ item.text }}
+                                            <div class="card tooltip-content" :class="{ 'active': stickyTooltip === item.text }" v-if="showTooltips[item.text] || stickyTooltip === item.text">
+                                                <h5 class="card-header">{{ item.text }}</h5>
+                                                <div class="card-body">
+                                                    <p>{{ item.tooltip }}</p>
+                                                </div>
+                                            </div>
+                                        </li>
+                                    </ul>
+
+                                </div>
+                            </div>
                         </div>
 
-                        <div class="slide-item">
-                            <h4 class="niveau-title">Niveau AAA</h4>
-                            <ul v-if="slide.niveauAAA.length">
-                                <li v-for="item in slide.niveauAAA" :key="item.text"
-                                    @mouseover="handleMouseOver(item.text)"
-                                    @mouseleave="handleMouseLeave(item.text)"
-                                    @click="handleClick(item.text)"
-                                    :class="{ 'active': stickyTooltip === item.text }">
-                                    {{ item.text }}
-                                    <div v-if="showTooltips[item.text]" class="tooltip-content">
-                                        <p>{{ item.tooltip }}</p>
-                                    </div>
-                                </li>
-                            </ul>
+                        <div class="slide-item col-sm-4">
+                            <div class="card">
+                                <div class="card-body">
+                                    <h4 class="niveau-title">Niveau AAA</h4>
+                                    <ul v-if="slide.niveauAAA.length">
+                                        <li v-for="item in slide.niveauAAA" :key="item.text"
+                                            @mouseover="handleMouseOver(item.text)"
+                                            @mouseleave="handleMouseLeave(item.text)"
+                                            @click="handleClick(item.text)"
+                                            :class="{ 'active': stickyTooltip === item.text }">
+                                            {{ item.text }}
+                                            <div class="card tooltip-content" :class="{ 'active': stickyTooltip === item.text }" v-if="showTooltips[item.text] || stickyTooltip === item.text">
+                                                <h5 class="card-header">{{ item.text }}</h5>
+                                                <div class="card-body">
+                                                    <p>{{ item.tooltip }}</p>
+                                                </div>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
                         </div>
 
                     </div>
@@ -224,15 +214,14 @@ const handleClick = (text) => {
 <style lang="scss" scoped>
 .niveau-title{
     color: #AB2DFF;
-
 }
-.slide-item{
+.slide-item.col-sm-4{
     li{
         list-style-type: none;
         cursor: pointer;
     }
     li.active{
-        color: #AB2DFF;
+        color: #A5A5FB;
     }
     ul{
         padding: 0;
@@ -240,7 +229,7 @@ const handleClick = (text) => {
         display: flex;
         flex-direction: column;
         justify-content: space-between;
-        height: 100%;
+        height: 80%;
     }
 }
 .slide-wrapper .slide {
@@ -252,17 +241,17 @@ const handleClick = (text) => {
 .active-slide{
     display: flex;
     justify-content: space-between;
-    width: 90%;
-    padding: 5rem;
+    padding: 7rem;
 }
 .slider-wrapper {
-  position: relative;
-  max-width: 80%;
-  min-width: 480px;
-  background: #fff;
-  margin: 0 auto;
-  overflow: hidden;
-  box-shadow: 0 0 35px 20px #DDE5EE;
+    position: relative;
+    max-width: 80%;
+    min-width: 480px;
+    background: #fff;
+    margin: 0 auto;
+    overflow: hidden;
+    border: 1px solid rgba(0, 0, 0, 0.175);
+    border-radius: 0.375rem;
 }
 
 .slider {
@@ -308,25 +297,37 @@ const handleClick = (text) => {
     }
     }
 }
-.tooltip-content {
+.tooltip-content.card {
     position: absolute;
     z-index: 1;
-    background-color: #f9f9f9;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    padding: 5rem;
-    box-shadow: 0 2px 10px rgba(0,0,0,0.2);
-    width: 80%;
-    bottom: 0;
-    left: 0;
+    width: 90%;
+    bottom: 5%;
     left: 50%; 
-    transform: translate(-50%, -50%);
+    height: 20%;
+    transform: translateX(-50%);
     transition: all 0.5s ease;
-
+    // opacity: 0;
     p{
         font-family: Avenir, Helvetica, Arial, sans-serif;
         color: initial;
     }
+}
+.tooltip-content.card.active{
+    z-index: 0;
+}
+.card,.row,.col-sm-4{
+    position: inherit;
+    height: 100%;
+}
+.card{
+    height: 50%;
+}
+.slides-container{
+    height: 100%;
+}
+.card-header{
+    background-color: #A5A5FB;
+    color: white;
 }
 
 </style>

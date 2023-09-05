@@ -73,7 +73,7 @@ table {
   margin: 20px 0;
   font-size: 18px;
   margin: auto;
-  width: 60%;
+  // width: 60%;
   height: 100%;
 }
 th, td {

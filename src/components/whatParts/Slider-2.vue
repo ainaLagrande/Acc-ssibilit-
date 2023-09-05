@@ -19,7 +19,7 @@
 </script>
 
 <template>
-  <div class="container">
+  <div class="container-slider">
     <div class="slider">
       <div class="slider__content" ref="slider" @scroll="handleScroll">
         <div class="slider__item">
@@ -84,7 +84,7 @@
 
   
 <style lang="scss" scoped>
-.container{
+.container-slider{
   display: flex;
   flex-direction: column;
   justify-content: center;
