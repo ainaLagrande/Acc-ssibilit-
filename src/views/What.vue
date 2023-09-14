@@ -85,6 +85,10 @@ onBeforeUnmount(() => {
 
 
 <template>
+
+  <!-- <header class="how-header">
+    <h3 class="how-header-title">Comment?</h3>
+  </header> -->
   <div id="what-container">
     <!-- Pagination -->
     <div class="pagination">
@@ -137,15 +141,17 @@ onBeforeUnmount(() => {
   box-sizing: border-box;
   overflow-y: auto; 
 }
-
 .pagination {
   z-index: 1000;
-  margin: auto;
-  display: flex;
-  justify-content: center;
+  bottom: 0;
+  margin: 0;
   position: absolute;
-  bottom: 5%;
-  width: 100%;
+  width: 10rem;
+  transform: rotate(90deg);
+  transform-origin: 0;
+  margin-left: calc(2% - 0.14rem);
+  top: 0;
+  z-index: 0;
   
   button {
     background: transparent;

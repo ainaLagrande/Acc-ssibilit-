@@ -1,4 +1,7 @@
+import defaultImage from '../assets/images/demo-page/demo.jpg';
+
 export default function arrayContentDemo() {
+  // Définition du tableau
   const arrayContentDemo = [
     {
       title: "titre H1",
@@ -18,18 +21,22 @@ export default function arrayContentDemo() {
     },
     {
       title: "les textes",
-      element: `<p>Aliquam egestas, mi a porta molestie, orci nulla rutrum est, vel 
+      element: `<p class="txt-roboto">Aliquam egestas, mi a porta molestie, orci nulla rutrum est, vel 
       euismod dolor lectus ac ligula. Interdum et malesuada fames ac ante ipsum primis in faucibus.
       Duis molestie arcu mauris, bibendum vulputate erat pulvinar a. Curabitur hendrerit eleifend porttitor.
       Vestibulum ornare maximus dui nec congue. Nulla sollicitudin fermentum porttitor. Etiam pulvinar nunc diam,
-      quis cursus turpis rhoncus eu. Sed quis quam laoreet, varius ex et, pretium metus. Morbi sit amet tellu
-      s in leo semper pellentesque vestibulum non sem.</p>`
+      quis cursus turpis rhoncus eu. Sed quis quam laoreet, varius ex et, pretium metus. Morbi sit amet tellus
+      s in leo semper pellentesque vestibulum non sem.</p> `
+    },
+    {
+      title: "les images",
+      element: `<img src="${defaultImage}" alt="paysage" width='700px' height='500px'>`
     },
     {
       title: "les liens",
       element: `<a href="#">Je suis un lien</a>`
     },
-  ]
+  ];
 
   return arrayContentDemo;
 }

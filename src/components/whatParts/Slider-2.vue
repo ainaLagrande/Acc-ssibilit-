@@ -156,7 +156,7 @@
     width: 100%;
     height: 100%;
     color: #fff;
-    font-family: system-ui;
+    font-family: Roboto;
     line-height: 1.1;
     font-weight: 300;
     font-size: 1.45rem;
@@ -186,7 +186,7 @@
   background: linear-gradient(to top, rgba(#000, 0.75), rgba(#203239, 0));
   h2 {
     color: #fff;
-    font-family: system-ui;
+    font-family: Roboto;
     line-height: 1.1;
     font-weight: 300;
     font-size: 1.75rem;
