@@ -7,7 +7,8 @@ export default function arrayFilter() {
     },
     {
       patho: "Daltonisme bleu",
-      class: "dalto-blue"
+      class: "dalto-blue",
+      description: "Adapte la taille des textes, augmente le contraste et stoppe les contenus animés."
     }
   ]
 
