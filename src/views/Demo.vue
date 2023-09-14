@@ -9,11 +9,12 @@ const arrayElement = ref([]);
 function choiseElement(el, desc) {
     const existing = arrayElement.value.find(item => item.class === el);
     if (existing) {
-        arrayElement.value = arrayElement.value.filter(item => item.class !== el);
+        arrayElement.value = [];
     } else {
-        arrayElement.value.push({ class: el, description: desc });
+        arrayElement.value = [{ class: el, description: desc }];
     }
 }
+
 </script>
 
 <template>
@@ -23,7 +24,9 @@ function choiseElement(el, desc) {
       <div class="filter-box" v-for="(item, index) in arrayFilter()">
         <div class="d-flex">
             <span>{{ item.patho }}</span>
-            <input :id="'filter-patho'+index" type="checkbox" @click="choiseElement(item.class, item.description)"/>
+            <input :id="'filter-patho'+index" type="checkbox"
+            :checked="arrayElement.some(e => e.class === item.class && e.description === item.description)"
+            @click="choiseElement(item.class, item.description)"/>
             <label :for="'filter-patho'+index" />
         </div>
 
