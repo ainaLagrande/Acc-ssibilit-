@@ -3,27 +3,28 @@
 @import 'libs/what.scss';
 @import 'libs/checklist.scss';
 
-html{
-    height: 100%;
-}
-body{
+
+* {
     margin: 0;
-    font-family: var(--base-body-font-family);
-    font-size: var(--base-body-font-size);
-    font-weight: var(--base-body-font-weight);
-    line-height: var(--base-body-line-height);
-    color: var(--base-body-color);
-    text-align: var(--base-body-text-align);
-    background-color: var(--base-body-bg);
-    -webkit-text-size-adjust: 100%;
-    -webkit-tap-highlight-color: rgba(0,0,0,0);
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body, html {
+    margin: 0;
+    padding: 0;
+    display: grid;
+    grid-template-rows: 1fr;
     height: 100%;
-    overflow-x: hidden;
-}
-#app{
-    height: 100%;
-    // min-height: 100vh;
-}
+  }
+  #app{
+    height: inherit;
+  }
+  .container{
+    height: inherit;
+  }
+  //TODO: je naime pas le rendu , reprendre les base de theme-base
+  
 // Header 
 .how-header,.checklist-header{
     height: 11rem;

@@ -1,0 +1,27 @@
+// Filtre pour Tritanopie (daltonisme bleu-jaune)
+.dalto-blue {
+  // Appliquer seulement si un élément quelconque contient une classe "success" ou "danger"
+  // Bouton Success
+  *[class*="success"] {
+    background-color: #f4a261 !important;
+    border-color: #e76f51 !important; 
+    color: #ffffff; 
+
+    &:hover {
+      background-color: #e76f51 !important;
+      border-color: #d64533 !important;
+    }
+  }
+
+  // Bouton Danger
+  *[class*="danger"] {
+    background-color: #9b59b6 !important;
+    border-color: #8e44ad !important; 
+    color: #ffffff; 
+
+    &:hover {
+      background-color: #8e44ad !important;
+      border-color: #7d3c98 !important;
+    }
+  }
+}

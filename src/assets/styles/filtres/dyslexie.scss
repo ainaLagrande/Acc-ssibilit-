@@ -1,0 +1,51 @@
+.dyslexie {
+    div, p, h1, h2, h3, h4, h5, h6 {
+      font-family: 'OpenDyslexic', sans-serif;
+      letter-spacing: 0.15em;
+      word-spacing: 0.2em;
+    }
+    p {
+      line-height: 1.5;
+      background: linear-gradient(to bottom, #FFF, #FFF 50%, #F1F1F1 50%, #F1F1F1);
+      background-size: 100% 1.2em;
+    }
+    input, textarea, select, button, label, fieldset, legend, optgroup, option {
+      font-family: 'OpenDyslexic', sans-serif;
+      letter-spacing: 0.15em;
+      word-spacing: 0.2em;
+    }
+  
+    input, textarea, select {
+      &::placeholder, &::-ms-expand { 
+        font-family: 'OpenDyslexic', sans-serif;
+        letter-spacing: 0.15em;
+        word-spacing: 0.2em;
+        color: #888;
+      }
+    }
+  
+    label {
+      cursor: pointer;
+    }
+  
+    fieldset {
+      border: 1px solid #ccc;
+      padding: 0.5em;
+    }
+  
+    legend {
+      padding: 0.2em 0.5em;
+    }
+  
+    optgroup {
+      font-weight: bold;
+    }
+  
+    option {
+      padding: 0.2em 0.5em;
+    }
+  
+    button {
+      cursor: pointer;
+    }
+  }

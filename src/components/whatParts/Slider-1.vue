@@ -9,7 +9,6 @@
   ]);
 </script>
 
-
 <template>
   <div class="container">
     <p class="what-txt highlight">La première chose à laquelle on pense lorsqu'on entend le mot « accessibilité », 
@@ -54,12 +53,10 @@
     </table>
   </div>
 </template>
-
-
   
 <style lang="scss" scoped>
 .container {
-  padding-bottom: 15rem;
+  padding-bottom: 5rem;
 }
 .highlight {
   border: 1px solid #ddd;
@@ -73,7 +70,6 @@ table {
   margin: 20px 0;
   font-size: 18px;
   margin: auto;
-  // width: 60%;
   height: 100%;
 }
 th, td {
@@ -109,7 +105,6 @@ td {
     display: block;
   }
 }
-
 .row-empty{
   border: none;
   box-shadow: none;

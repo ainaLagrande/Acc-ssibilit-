@@ -1,0 +1,27 @@
+// Filtre pour Protanopie
+.dalto-red {
+  // Appliquer seulement si un élément quelconque contient une classe "success" ou "danger"
+  *[class*="success"] {
+    // Bouton Success
+    background-color: #a1c4fd !important; 
+    border-color: #89a2db !important; 
+    color: #ffffff;
+
+    &:hover {
+      background-color: #89a2db !important;
+      border-color: #6f84c1 !important;
+    }
+  }
+
+  *[class*="danger"] {
+    // Bouton Danger
+    background-color: #f4a261 !important;
+    border-color: #e76f51 !important;
+    color: #ffffff;
+
+    &:hover {
+      background-color: #e76f51 !important;
+      border-color: #d64533 !important;
+    }
+  }
+}

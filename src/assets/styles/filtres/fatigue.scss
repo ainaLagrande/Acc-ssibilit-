@@ -1,0 +1,48 @@
+.fatigue {
+    div, .card, .modal, .carousel, form {
+      font-size: 1.1rem;
+    }
+    /* Titres */
+    h1 { font-size: 3rem; }
+    h2 { font-size: 2.5rem; }
+    h3 { font-size: 2.25rem; }
+    h4 { font-size: 2rem; }
+    h5 { font-size: 1.85rem; }
+    h6 { font-size: 1.5rem; }
+    li a { font-size: 2.25rem; }
+    
+    button, a {
+      font-size: 1.5rem;
+      letter-spacing: 0.1rem;
+    }
+    p {
+      font-size: 1.1rem;
+      letter-spacing: 0.1rem;
+      line-height: 1.7rem;
+    }
+    img {
+      filter: contrast(85%);
+    }
+    video {
+      filter: contrast(85%);
+    }  
+    .progress-bar {
+      font-size: 1.2rem;
+    }
+    input, textarea, select, button, label, fieldset, legend, optgroup, option{
+      font-size: 1.2rem;
+      letter-spacing: 0.1rem;
+    }
+    /* Stopper le contenu animé */
+    * {
+      animation-play-state: paused !important;
+      transition: none !important;
+    }
+  
+    @media (prefers-reduced-motion: reduce) {
+      * {
+        animation-play-state: paused !important;
+        transition: none !important;
+      }
+    }
+}

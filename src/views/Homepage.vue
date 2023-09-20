@@ -1,7 +1,7 @@
 <script setup></script>
 <template>
-    <div class="home-container main-container">
-        <img src="../assets/images/home-background-big.png" class="homepage-img card-img">
+    <div class="home-container main-container ">
+        <!-- <img src="../assets/images/home-background-big.png" class="homepage-img card-img"> -->
         <div class="home-box">
             <div class="home-txt">
                 <p>Comment procéder à la visite de ce site ?<br>
@@ -21,39 +21,55 @@
 <style lang="scss" scoped>
 
 .home-container{
-    width: 100%;
-    // height: 90vh;
+
+    background-image: url(../assets/images/home-background-big.png);
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
     display: flex;
     color: white;
+    position: relative;
+
+    @media (max-width: 1199.98px) {
+        background-size: cover;
+    }
+
     .home-box{
         display: flex;
-        justify-content: space-between;
-        align-items: flex-end;
+        align-items: center;
         width: 100%;
-        position: absolute;
-        top: 20%;
+        @media (max-width: 1199.98px) {
+            align-items: flex-start;
+        }
     }
     .home-txt{
         display: flex;
         align-items: center;
         width: 70%;
-        margin-bottom: 15%;
+        @media (max-width: 1199.98px) {
+            width: 100%;
+            align-items: flex-start;
+        }
         p{
             padding: 8rem;
             font-size: 2rem;
             line-height: 60px;
-            @media screen and (min-width: 2767px) {
-                width: 75%;
+            @media (max-width: 1199.98px) {
+                padding: 4rem;
+                font-size: 1.8rem;
+                line-height: inherit;
             }
         }
-
     }
+
     .home-img{
-        display: flex;
-        justify-content: flex-end;
         img{
-            // width: 70%;
-            height: 100%;
+            width: 25%;
+            position: absolute;
+            bottom: 0;
+            right: 0;
+            @media (max-width: 1199.98px) {
+                width: 60%;
+            }
         }
     }
 }

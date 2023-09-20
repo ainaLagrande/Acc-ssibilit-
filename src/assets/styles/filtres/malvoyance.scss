@@ -1,0 +1,39 @@
+// Filtre pour la malvoyance
+.malvoyance {
+    // Contraste élevé
+    background-color: #ffffff !important;
+    color: #000000 !important;
+    // Texte
+    body, div, p, button, a, .card, .modal, .carousel, form {
+      font-size: 1.5rem !important;
+      line-height: 1.8 !important;
+      letter-spacing: 0.12rem !important;
+    }
+    h1 { font-size: 3rem; }
+    h2 { font-size: 2.5rem; }
+    h3 { font-size: 2.25rem; }
+    h4 { font-size: 2rem; }
+    h5 { font-size: 1.85rem; }
+    h6 { font-size: 1.5rem; }
+    li a { font-size: 2.25rem!important; }
+
+    
+    // Boutons et liens
+    button, a {
+      padding: 15px 30px !important;
+      font-size: 1.5rem !important;
+    }
+  
+    // Formulaires
+    input, textarea, select {
+      font-size: 1.5rem !important;
+      border: 2px solid #000 !important;
+    }
+  
+    // Désactiver les animations
+    *, *::before, *::after {
+      transition: none !important;
+      animation: none !important;
+    }
+}
+  

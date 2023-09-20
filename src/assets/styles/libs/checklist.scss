@@ -11,68 +11,48 @@
 }
 
 .checklist-gloabal-container {
-	// display: -webkit-box;
-	// display: -ms-flexbox;
-	// max-width: 1550px;
-	// margin: 0 auto;
-	// -webkit-box-flex: 1;
-	// -ms-flex: 1;
-	// flex: 1;
-	// -ms-flex-wrap: wrap;
-	// flex-wrap: wrap;
-	// -ms-flex-pack: distribute;
-
-    // display: flex;
-	// flex-direction: column;
-    // align-items: center;
-    // height: 100%;
-
     .container-box{
-        // width: 100%;
         display: flex;
         flex-direction: column;
         justify-content: center;
         align-items: center;
-
     }
-	
 }
 .checklist-gloabal-container .checklist {
     min-width: 350px;
-    max-width: 400px;
+    max-width: 500px;
     margin: 15px 15px 0;
     box-shadow: 0px 3px 6px #00000029;
     border-radius: 20px;
-    height: 20rem;
+    height: 25rem;
     padding: 1rem;
     width: 30%;
     overflow-x: hidden;
-    overflow-y: auto; /* to ensure vertical scrolling */
+    overflow-y: auto; 
 }
 
-/* Webkit browsers like Chrome, Safari */
 .checklist-gloabal-container .checklist::-webkit-scrollbar {
-    width: 7px;  /* width of the entire scrollbar */
+    width: 7px;  
 }
 
 .checklist-gloabal-container .checklist::-webkit-scrollbar-track {
-    background-color: #F7F7F7;  /* color of the tracking area */
+    background-color: #F7F7F7;  
     border-radius: 10px;
 }
 
 .checklist-gloabal-container .checklist::-webkit-scrollbar-thumb {
-    background-color: $secondary;  /* color of the scroll thumb */
+    background-color: $secondary;
     border-radius: 10px;
 }
 
 .checklist-gloabal-container .checklist::-webkit-scrollbar-thumb:hover {
-    background-color: $primary;  /* color of the scroll thumb on hover */
+    background-color: $primary;
 }
 
 /* Firefox */
 .checklist-gloabal-container .checklist {
-    scrollbar-width: thin;  /* "thin" or "auto" or "none" */
-    scrollbar-color: $secondary #F7F7F7;  /* thumb and track color */
+    scrollbar-width: thin;  
+    scrollbar-color: $secondary #F7F7F7;  
 }
 
 /* IE and Edge */
@@ -80,17 +60,14 @@
     -ms-overflow-style: none;  /* hides the default scrollbar */
 }
 
-
 .checklist-gloabal-container .checklist .checklist-container {
 	margin: 0;
-	// padding: 0;
 	padding: 1rem;
 }
 .checklist__title {
 	font-size: 2.125em;
 	font-weight: 500;
 	margin: 0;
-	// color: #e6e6e6;
 	color: #AB2DFF;
 }
 .checklist__title-border {

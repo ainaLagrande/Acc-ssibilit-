@@ -355,7 +355,7 @@ function handleClick(text){
     line-height: 2rem;
 }
 .container {
-  padding-bottom: 15rem;
+  padding-bottom: 5rem;
 }
 
 </style>

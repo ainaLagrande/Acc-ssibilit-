@@ -1,0 +1,28 @@
+// Filtre pour Deutéranopie
+.dalto-green {
+    // Appliquer seulement si un élément quelconque contient une classe "success" ou "danger"
+    *[class*="success"] {
+      // Bouton Success
+        background-color: #4a90e2!important;
+        border-color: #357abD!important;
+        color: #ffffff;
+    
+        &:hover {
+          background-color: #357abD!important;
+          border-color: #2e6da4!important;
+        }
+      
+    }
+    *[class*="danger"] {
+
+      // Bouton Danger
+        background-color: #ff7f50!important;
+        border-color: #ff4500!important;
+        color: #ffffff;
+    
+        &:hover {
+          background-color: #ff4500!important;
+          border-color: #e44100!important;
+        }
+    }
+}

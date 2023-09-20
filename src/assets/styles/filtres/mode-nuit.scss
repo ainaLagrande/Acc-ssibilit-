@@ -1,0 +1,51 @@
+.mode-nuit {
+    background-color: #252525;
+    color: #ffffff; // Texte en blanc
+  
+    // Textes et titres
+    div, p, h1, h2, h3, h4, h5, h6 {
+        background-color: #252525;
+        color: #ffffff;
+    }  
+    // Liens
+    a {
+      color: #bb86fc; // Couleur de lien plus claire
+    }
+  
+    // Images et vidéos
+    img, video {
+      filter: brightness(0.7); // Réduire la luminosité
+    }
+  
+    // Boutons
+    button {
+      background-color: #2e2e2e;
+      color: #ffffff;
+      border: 1px solid #444;
+    }
+  
+    // Éléments de formulaire
+    input, textarea, select, label, fieldset, legend, optgroup, option {
+      background-color: #2e2e2e;
+      color: #ffffff;
+      border: 1px solid #444;
+    }
+  
+    // Barres de progression
+    .progress-bar {
+      background-color: #474747;
+    }
+  
+    // Cartes
+    .card {
+      background-color: #2e2e2e;
+      color: #ffffff;
+    }
+  
+    // Modales
+    .modal-content {
+      background-color: #474747;
+      color: #ffffff;
+    }
+  }
+  

@@ -61,7 +61,7 @@ import Outils from '../components/howParts/Outils.vue';
                     > {{ page.label }} </a>
                 </nav>
             </div>
-            <div class="col how-page-content">
+            <div class="col how-page-content container">
                 <component :is="
                 activePage === 'p1' ? Global :
                 activePage === 'p2' ? Contenu :
@@ -88,6 +88,16 @@ import Outils from '../components/howParts/Outils.vue';
 </template>
 
 <style lang="scss" scoped>
-
+.col-2-sm{
+    width: fit-content;
+}
+.container{
+    padding: 0;
+    margin: 0;
+    height: 100%;
+}
+.row{
+    height: 100%;
+}
 
 </style>

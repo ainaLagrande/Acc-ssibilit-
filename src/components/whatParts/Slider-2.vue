@@ -101,7 +101,7 @@
 
 .slider {
   width: 100%;
-  max-width: 50%;
+  max-width: 60%;
   margin: 0 auto;
 }
 .slider__content {
@@ -217,7 +217,7 @@
   background: #fff;
   color: #203239;
   padding: 0.5rem 1rem;
-  font-size: 0.75rem;
+  font-size: 1rem;
   line-height: 1;
   pointer-events: none;
   transition: 0.2s ease-out;

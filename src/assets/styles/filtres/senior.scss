@@ -1,0 +1,49 @@
+/* Filtre Senior */
+.senior {
+    /* Texte et conteneurs */
+    div, p, form, .card, .modal, .carousel {
+      font-size: 1.2rem;
+      line-height: 1.6; 
+    }
+    /* Titres */
+    h1 { font-size: 3rem; }
+    h2 { font-size: 2.5rem; }
+    h3 { font-size: 2.25rem; }
+    h4 { font-size: 2rem; }
+    h5 { font-size: 1.85rem; }
+    h6 { font-size: 1.5rem; }
+    li a { font-size: 2.25rem; }
+
+  
+    /* Boutons et liens */
+    button, a {
+      font-size: 1.5rem;
+      letter-spacing: 0.1rem;
+      cursor: pointer;
+    }
+  
+    /* Paragraphes */
+    p {
+      font-size: 1.2rem;
+      letter-spacing: 0.1rem;
+      line-height: 1.7rem;
+    }
+  
+    /* Médias */
+    img, video {
+      filter: contrast(90%); /* Augmentation du contraste */
+    }
+  
+    /* Barre de progression */
+    .progress-bar {
+      font-size: 1.2rem;
+    }
+  
+    /* Formulaires */
+    input, textarea, select, button, label, fieldset, legend, optgroup, option {
+      font-size: 1.2rem;
+      letter-spacing: 0.1rem;
+    }
+  
+}
+  
