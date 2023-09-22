@@ -1,0 +1,25 @@
+/* Filtre Tremblements essentiels */
+.tremblements-essentiels {
+    /* Boutons et liens */
+    button, a, li {
+      padding: 20px 40px;
+      margin: 15px;
+      cursor: pointer;
+    }
+  
+    /* Formulaires */
+    input[type="submit"], input[type="button"], input[type="checkbox"], input[type="radio"], select {
+      padding: 15px;
+      margin: 10px;
+    }
+  
+    /* Zones de texte */
+    textarea {
+      padding: 15px;
+      margin: 10px;
+    }
+    .open-filter{
+        margin: 0;
+    }
+}
+  

@@ -55,7 +55,7 @@ export default function arrayFilter() {
       description: "Agrandit et espace les zones cliquables."
     },
     {
-      patho: "Confort",
+      patho: "Épilepsie photosensible",
       class: "epilepsie-photosensible",
       description: "Stoppe les contenus animés."
     },
@@ -67,7 +67,7 @@ export default function arrayFilter() {
     {
       patho: "Migraine Ophtalmique",
       class: "migraine-ophtalmique",
-      description: "Adapte la taille des textes et modifie la police d'écriture, assombrit la couleur du fond et éclaircit la couleur des textes. Augmente également le contraste et stoppe les contenus animés."
+      description: "Adapte la police d'écriture, assombrit la couleur du fond et éclaircit la couleur des textes. Stoppe les contenus animés."
     },
   ]
 

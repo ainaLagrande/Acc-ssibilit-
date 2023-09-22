@@ -1,0 +1,8 @@
+.epilepsie-photosensible {
+    /* Désactiver les animations et les transitions */
+    *, *::before, *::after {
+      animation: none !important;
+      transition: none !important;
+    }
+}
+  

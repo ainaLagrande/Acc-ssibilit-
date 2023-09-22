@@ -1,0 +1,16 @@
+/* Filtre pour Migraine Ophtalmique avec adaptations */
+body.migraine-ophtalmique {
+    background-color: #333 !important;
+    color: #f4f4f4 !important;
+    /* Adapte la taille des textes et modifie la police d'écriture */
+    body, div, p, h1, h2, h3, h4, h5, h6, button, a, input, textarea, select {
+      font-family: 'Arial', sans-serif !important;
+    }
+  
+    /* Stoppe les contenus animés */
+    *, *::before, *::after {
+      animation: none !important;
+      transition: none !important;
+    }
+  }
+  
