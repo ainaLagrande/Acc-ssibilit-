@@ -6,6 +6,15 @@ import arrayFilter from '@/utils/arrayFilter.js'
 const showFilter = ref(false);
 const arrayElement = ref([]);
 
+// Charger l'état du filtre à partir de localStorage lors du montage du composant
+onMounted(() => {
+  const savedFilter = localStorage.getItem('savedFilter');
+  if (savedFilter) {
+    arrayElement.value = JSON.parse(savedFilter);
+    updateBodyClass();
+  }
+});
+
 function choiseElement(el, desc) {
   const existing = arrayElement.value.find(item => item.class === el);
   if (existing) {
@@ -13,6 +22,8 @@ function choiseElement(el, desc) {
   } else {
     arrayElement.value = [{ class: el, description: desc }];
   }
+  // Sauvegarder l'état du filtre dans localStorage
+  localStorage.setItem('savedFilter', JSON.stringify(arrayElement.value));
 }
 
 // Ajouter les classes au body
