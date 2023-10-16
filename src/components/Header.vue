@@ -1,9 +1,33 @@
-<script setup></script>
+<script setup>
+import { ref } from 'vue';
+
+const showMenu = ref(false);
+
+const toggleMenu = () => {
+  showMenu.value = !showMenu.value;
+};
+</script>
 
 <template>
   <header>
+    <button @click="toggleMenu" class="menu-button">Menu</button>
+    
+    <transition name="slide-fade">
+      <div class="menu-mobile" v-if="showMenu">
+        <button @click="toggleMenu" class="close-button">×</button>
+        <ul>
+          <li><router-link to="/">Accueil</router-link></li>
+          <li><router-link to="/what">Quoi</router-link></li>
+          <li><router-link to="/how">Comment</router-link></li>
+          <li><router-link to="/checklist">Checklist</router-link></li>
+          <li><router-link to="/demo">Démo</router-link></li>
+        </ul>
+      </div>
+    </transition>
+
     <nav class="nav-primary">
         <ul>
+          <li><router-link to="/">Accueil</router-link></li>
             <li><router-link to="/what">Quoi</router-link></li>
             <li><router-link to="/how">Comment</router-link></li>
             <li><router-link to="/checklist">Checklist</router-link></li>
@@ -16,38 +40,5 @@
 </template>
 
 <style lang="scss" scoped>
-
-header{
-    width: 100%;
-    height: 10rem;
-    border-bottom: 1px solid black;
-    .nav-primary{
-        display: flex;
-        justify-content: space-between;
-        width: 100%;
-        height: 100%;
-        text-transform: uppercase;
-
-        ul{
-            display: flex;
-            justify-content: space-between;
-            width: 30%;
-            margin: auto;
-            li{
-                list-style-type: none;
-                font-size: 2rem;
-                cursor: pointer;
-            }
-        }
-        .moon{
-            font-size: 2rem;
-            display: flex;
-            align-items: center;
-            margin-right: 5%;
-        }
-        .router-link-active{
-            color: #AB2DFF;
-        }
-    }
-}
+  @import "@/assets/styles/libs/header.scss";
 </style>

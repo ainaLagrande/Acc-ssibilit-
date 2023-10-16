@@ -3,7 +3,6 @@
 <template>
 
 <footer>
-    <hr>
     <div class="footer-box">
         <img src="../assets/images/logo_CYIM_RVB 1.png" alt="logo cyim">
         <ul>
@@ -18,14 +17,14 @@
 footer{
     width: 100%;
     height: 5rem;    
-    // border-width: 50%;
     margin-top: auto;
     padding-top: 0.5rem;
     padding-bottom: 0.5rem;
-    background-color: var(--footer-bg,#000);
+    background-color: $secondary;
     color: var(--footer-color,#fff);
     font-size: 0.75rem;
     display: block;
+    border-top: $primary 2px solid;
     hr{
         margin: 0;
         width: 95%;

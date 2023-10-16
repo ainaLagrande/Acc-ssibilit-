@@ -162,6 +162,7 @@
     font-size: 1.45rem;
     margin: 0;
     padding: 4rem 2rem 2rem;
+    overflow-y: scroll;
   }
 
   @media (min-width: 460px) {
