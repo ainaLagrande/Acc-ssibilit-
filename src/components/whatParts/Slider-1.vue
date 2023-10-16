@@ -28,29 +28,31 @@
       d'appréhender le handicap, c'est de le considérer comme une  <span class="bold-txt">inadéquation entre la 
       personne et son environnement.</span> Cette inadéquation peut être  <span class="bold-txt"> permanente, 
       temporaire ou situationnelle.</span></p>
-    <table class="mt-5">
-      <tbody>
-        <tr>
-          <td class="row-empty"></td>
-          <th class="row-title"><img src="../../assets/images/what-page/main.webp" alt="main"></th>
-          <th class="row-title"><img src="../../assets/images/what-page/oeil.webp" alt="main"></th>
-          <th class="row-title"><img src="../../assets/images/what-page/oreille.webp" alt="main"></th>
-          <th class="row-title"><img src="../../assets/images/what-page/bouche.webp" alt="main"></th>
-        </tr>
-        <tr>
-          <th class="col-title">Permanent</th>
-          <td class="col-row-elements" v-for="(row, index) in tableData" :key="'col1-' + index">{{ row.col1 }}</td>
-        </tr>
-        <tr>
-          <th class="col-title">Temporaire</th>
-          <td class="col-row-elements" v-for="(row, index) in tableData" :key="'col2-' + index">{{ row.col2 }}</td>
-        </tr>
-        <tr>
-          <th class="col-title">Situationnel</th>
-          <td class="col-row-elements" v-for="(row, index) in tableData" :key="'col3-' + index">{{ row.col3 }}</td>
-        </tr>
-      </tbody>
-    </table>
+      <div class="table-box">
+        <table class="mt-5">
+          <tbody>
+            <tr>
+              <td class="row-empty"></td>
+              <th class="row-title"><img src="../../assets/images/what-page/main.webp" alt="main"></th>
+              <th class="row-title"><img src="../../assets/images/what-page/oeil.webp" alt="main"></th>
+              <th class="row-title"><img src="../../assets/images/what-page/oreille.webp" alt="main"></th>
+              <th class="row-title"><img src="../../assets/images/what-page/bouche.webp" alt="main"></th>
+            </tr>
+            <tr>
+              <th class="col-title">Permanent</th>
+              <td class="col-row-elements" v-for="(row, index) in tableData" :key="'col1-' + index">{{ row.col1 }}</td>
+            </tr>
+            <tr>
+              <th class="col-title">Temporaire</th>
+              <td class="col-row-elements" v-for="(row, index) in tableData" :key="'col2-' + index">{{ row.col2 }}</td>
+            </tr>
+            <tr>
+              <th class="col-title">Situationnel</th>
+              <td class="col-row-elements" v-for="(row, index) in tableData" :key="'col3-' + index">{{ row.col3 }}</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
   </div>
 </template>
   
@@ -63,6 +65,33 @@
   background-color: #ddd;
   padding: 20px 20px;
   border-radius: 5px;
+}
+@media (max-width: 767.98px) { 
+  .table-box{
+    overflow-y: scroll;
+  }
+  /* Pour les navigateurs WebKit (Chrome, Safari) */
+  .table-box::-webkit-scrollbar {
+    width: 6px;
+    height: 13px;
+  }
+  .table-box::-webkit-scrollbar-track {
+    background: #D2D2D2;
+    border-radius: 10px;
+  }
+
+  .table-box::-webkit-scrollbar-thumb {
+    background: #3D0437;
+    border-radius: 10px;
+  }
+  /* Pour Firefox */
+  .table-box {
+    scrollbar-width: thin;
+    scrollbar-color: #3D0437 #D2D2D2;
+  }
+  table {
+    margin-bottom: 20px;
+  }
 }
 table {
   border-collapse: separate;
@@ -83,6 +112,11 @@ td {
 .col-row-elements {
   background-color: #f7f7f7;
   font-weight: 400;
+  text-align: center;
+  @media (max-width: 1199.98px) { 
+    min-width: 7rem;
+    height: 7rem;
+  }
 }
 .col-title {
   width: 15%;
@@ -90,13 +124,24 @@ td {
   min-width: 10rem;
   height: 8rem; 
   font-weight: 500;
-}
 
+  @media (max-width: 1199.98px) { 
+    min-width: 7rem;
+    height: 7rem;
+  }
+
+}
 .row-title {
   width: 10%;
   max-width: 15rem;
   min-width: 8rem;
   height: 8rem;
+
+  @media (max-width: 1199.98px) { 
+    max-width: 6rem;
+    min-width: 6rem;
+    height: 6rem;
+  }
 
   img {
     max-width: 60%;

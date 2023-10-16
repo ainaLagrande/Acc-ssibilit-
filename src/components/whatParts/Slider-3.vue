@@ -256,6 +256,10 @@ function handleClick(text){
     display: flex;
     justify-content: space-between;
     padding: 0rem 7rem 7rem;
+
+    @media (max-width: 1199.98px) { 
+        padding: 0rem 3rem 7rem;
+    }
 }
 .slider-wrapper {
     position: relative;

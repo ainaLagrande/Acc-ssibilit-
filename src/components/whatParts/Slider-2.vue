@@ -103,6 +103,10 @@
   width: 100%;
   max-width: 60%;
   margin: 0 auto;
+
+  @media (max-width: 1199.98px) { 
+    max-width: 95%;
+  }
 }
 .slider__content {
   overflow-x: scroll;
@@ -139,6 +143,10 @@
   position: relative;
   aspect-ratio: 1;
   cursor: pointer;
+
+  @media (max-width: 767.98px) { 
+    height: 40rem;
+  }
   &:hover .slider__hover-text {
     opacity: 1; 
   }
