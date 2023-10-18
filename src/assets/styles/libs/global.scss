@@ -5,44 +5,68 @@
 // Ajout d'un \ devant une variable
 @mixin variable-icon-font($icon-code) {
     content: #{'"\\'}#{$icon-code + '"'};
-}  
+}
 
 $primary: #3E018B;
 $secondary: #A5A5FB;
 $tertiary: #AB2DFF;
-$white:#ffff; 
+$white: #ffff;
 
-.container{
-    max-width:  1880px;
+
+.container {
+    max-width: 1880px;
 }
-
-.italic{
+.italic {
     font-style: italic;
 }
-.underline{
+.underline {
     cursor: pointer;
     color: $tertiary;
 }
-.main-container {
-    height: 100%;
-}
-.bold-txt{
-    text-transform: lowercase!important;
+
+.bold-txt {
+    text-transform: lowercase !important;
     font-family: Roboto;
     font-weight: bold;
-
 }
-a{
-    text-decoration: none!important;
-    &:hover{
+body a {
+    text-decoration: none !important;
+    color: $primary;
+
+    &:hover {
         text-decoration: none;
         color: #AB2DFF;
     }
 }
 
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
 
+body,
+html {
+    margin: 0;
+    padding: 0;
+    display: grid;
+    grid-template-rows: 1fr;
+    height: 100%;
+}
 
+#app {
+    height: inherit;
+}
 
+.container {
+    height: inherit;
+}
+.what-container.home-container,
+.how-container,.main-container {
+    height: 100%;
+}
 
-
+.txt-roboto {
+    font-family: Roboto;
+}
 

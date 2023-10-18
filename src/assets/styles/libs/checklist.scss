@@ -1,6 +1,11 @@
 .reset-button{
-	width: 100px;
 	margin: auto;
+	background-color: $white;
+    border: $primary 1px solid;
+    color: $primary;
+    border-radius: 20px;
+    padding: 0.5rem 4rem;
+	margin: 3rem 0rem;
 }
 
 .container-items{

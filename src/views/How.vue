@@ -1,4 +1,5 @@
 <script setup>
+import { ref } from 'vue';
 import Global from '../components/howParts/Global.vue';
 import Contenu from '../components/howParts/Contenu.vue';
 import Modal from '../components/howParts/Modal.vue';
@@ -17,11 +18,10 @@ import MobileEtTactile from '../components/howParts/MobileEtTactile.vue';
 import Css from '../components/howParts/Css.vue';
 import Outils from '../components/howParts/Outils.vue';
 
-
-    let activePage = localStorage.getItem('activePage') || 'p1';
+    let activePage = ref(localStorage.getItem('activePage') || 'p1');
 
     function setActivePage(id) {
-        activePage = id;
+        activePage.value = id;
         localStorage.setItem('activePage', id);
     }
 
@@ -45,6 +45,15 @@ import Outils from '../components/howParts/Outils.vue';
       {label: 'Outils de développement', id: 'p17' },
     ];
 
+
+const showMenu = ref(false);
+
+const toggleMenu = () => {
+  showMenu.value = !showMenu.value;
+};
+
+
+
 </script>
 
 <template>
@@ -54,12 +63,30 @@ import Outils from '../components/howParts/Outils.vue';
     <div class="how-container container">
         <div class="row">
             <div class="col-2-sm">
+                <button @click="toggleMenu" class="how-mobil-menu-button">Choisi la section</button>
+                <transition name="fade">
+                    <div class="overlay" v-if="showMenu" @click="toggleMenu"></div>
+                </transition>
+
+                <transition name="slide-fade">
+                    <div class="menu-mobile" v-if="showMenu">
+                        <button @click="toggleMenu" class="close-button">×</button>
+                        <nav class="how-mobil-sidebar how-sidebar">
+                            <a v-for="page in pages" :key="page.id" class="nav-link" :href="'#' + page.id"
+                                :class="{ active: activePage === page.id }" @click="setActivePage(page.id),
+                                activePage = page.id"
+                            > {{ page.label }} </a>
+                        </nav>
+                    </div>
+                </transition>
+
                 <nav class="how-sidebar">
                     <a v-for="page in pages" :key="page.id" class="nav-link" :href="'#' + page.id"
                         :class="{ active: activePage === page.id }" @click="setActivePage(page.id),
                         activePage = page.id"
                     > {{ page.label }} </a>
                 </nav>
+                
             </div>
             <div class="col how-page-content container">
                 <component :is="
@@ -88,16 +115,6 @@ import Outils from '../components/howParts/Outils.vue';
 </template>
 
 <style lang="scss" scoped>
-.col-2-sm{
-    width: fit-content;
-}
-.container{
-    padding: 0;
-    margin: 0;
-    height: 100%;
-}
-.row{
-    height: 100%;
-}
-
+  @import "@/assets/styles/libs/how.scss";
+  @import "@/assets/styles/libs/accordion.scss";
 </style>

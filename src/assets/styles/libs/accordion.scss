@@ -1,0 +1,73 @@
+.container{
+    //Color changed if active
+    .p-accordion-tab-active{
+        .p-accordion-header-text{
+            color: $tertiary;
+        }
+    }
+    .how-page-content{
+        .p-accordion-header-action{
+            padding: 2rem;
+            &:hover{
+                text-decoration: none;
+                color: initial;
+            }
+  
+            .p-accordion-header-text{
+                font-size: 1.50rem;
+            }
+        }
+  
+        .p-accordion-content,.italic,a,li,p{
+            font-family: Riboto;
+        }
+        .p-accordion-content{
+            padding: 0 2rem 0 2rem;
+            font-family: Riboto;
+  
+            font-size: 1.50rem;
+            display: flex;
+            flex-direction: column;
+  
+            .how-img{
+                width: 40rem;
+                height: auto;
+
+                @media (max-width: 767.98px) { 
+                    width: 100%;
+                }
+            }
+        }
+  
+    }
+  
+  }
+  
+  
+  // Changer d'icones selon l'état 
+  .p-accordion-header-link {
+    .p-accordion-header-text{
+        &::after {
+            font-family: "Material Design Icons";
+            @include variable-icon-font(map-get($mdi-icons, minus));
+            font-size: 24px;
+            left: -1%;
+            bottom: 2%;
+        }
+    }
+  }
+  .p-accordion-header-link[aria-expanded="true"] {
+    .p-accordion-header-text{
+        &::after {
+            font-family: "Material Design Icons";
+            @include variable-icon-font(map-get($mdi-icons, plus));
+            font-size: 24px;
+            left: -1%;
+            bottom: 2%;
+        }
+    }
+  }
+  .p-icon{
+    display: none!important;
+  }
+  

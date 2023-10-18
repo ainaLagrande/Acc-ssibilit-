@@ -230,6 +230,10 @@ function handleClick(text){
     color: #AB2DFF;
 }
 .slide-item.col-sm-4{
+    @media (max-width: 1199.98px) { 
+        width: 100%;
+        margin-bottom: 2rem;
+    }
     li{
         list-style-type: none;
         cursor: pointer;
@@ -251,6 +255,9 @@ function handleClick(text){
 }
 .slide-wrapper .active-slide {
   display: flex;
+    @media (max-width: 1199.98px) { 
+        justify-content: center;
+    }
 }
 .active-slide{
     display: flex;
@@ -258,27 +265,36 @@ function handleClick(text){
     padding: 0rem 7rem 7rem;
 
     @media (max-width: 1199.98px) { 
-        padding: 0rem 3rem 7rem;
+        padding: 0rem 3rem 18rem;
+    }
+    @media (max-width: 767.98px) { 
+        padding: 0rem 2rem 18rem;
     }
 }
 .slider-wrapper {
     position: relative;
-    // max-width: 80%;
     min-width: 480px;
     background: #fff;
     margin: 0 auto;
     overflow: hidden;
     border: 1px solid rgba(0, 0, 0, 0.175);
     border-radius: 0.375rem;
+    @media (max-width: 767.98px) { 
+        min-width: 100%;
+    }
+
 }
 
 .slider {
   position: relative;
   height: 50rem;
   padding: 5rem 0;
+
+    @media (max-width: 1199.98px) { 
+        height: 100%;
+    }
 }
 .slide-wrapper {
-//   position: relative;
   width: 100%;
   height: 100%;
 }
@@ -294,6 +310,10 @@ function handleClick(text){
   display: flex;
   justify-content: space-between;
   top: 0;
+
+    @media (max-width: 767.98px) { 
+        margin-left: calc(98% - 0.25rem);
+    }
 
   li {
     text-transform:uppercase;
@@ -324,11 +344,13 @@ function handleClick(text){
     height: 25%;
     transform: translateX(-50%);
     transition: all 0.5s ease;
-    // opacity: 0;
+    @media (max-width: 1199.98px) { 
+        width: 85%;
+    }
     p{
         font-family: Avenir, Helvetica, Arial, sans-serif;
         color: initial;
-    }
+    }    
 }
 .tooltip-content.card.active{
     z-index: 0;

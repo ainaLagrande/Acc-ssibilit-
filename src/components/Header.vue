@@ -12,6 +12,10 @@ const toggleMenu = () => {
   <header>
     <button @click="toggleMenu" class="menu-button">Menu</button>
     
+    <transition name="fade">
+      <div class="overlay" v-if="showMenu" @click="toggleMenu"></div>
+    </transition>
+
     <transition name="slide-fade">
       <div class="menu-mobile" v-if="showMenu">
         <button @click="toggleMenu" class="close-button">×</button>

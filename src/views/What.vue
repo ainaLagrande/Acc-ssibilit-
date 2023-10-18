@@ -13,6 +13,10 @@ const sections = ref([
 </script>
 
 <template>
+    <header class="how-header">
+      <h3 class="how-header-title">WTF?</h3>
+  </header>
+
   <div v-for="(section, index) in sections" :key="index" class="child">
     <h2 class="what-title">{{ section.title }}</h2>
     <Slider1 v-if="section.title === 'Handicap'" />

@@ -1,33 +1,8 @@
 @import 'libs/global.scss';
-@import 'libs/how.scss';
 @import 'libs/what.scss';
 @import 'libs/checklist.scss';
+@import 'libs/accordion.scss';
 
-
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
-body,
-html {
-  margin: 0;
-  padding: 0;
-  display: grid;
-  grid-template-rows: 1fr;
-  height: 100%;
-}
-
-#app {
-  height: inherit;
-}
-
-.container {
-  height: inherit;
-}
-
-//TODO: je naime pas le rendu , reprendre les base de theme-base
 
 // Header 
 .how-header,
@@ -39,7 +14,6 @@ html {
   background-image: url(../images/header.png);
   background-repeat: no-repeat;
   background-size: cover;
-  // background-size: 100% 100%;
   background-position: center;
 
   .how-header-title,
@@ -52,16 +26,33 @@ html {
     font-size: 4rem;
   }
 }
-
-.what-container.home-container,
-.how-container {
-  height: 100%;
+/* Transitions */
+.slide-fade-enter-active, .slide-fade-leave-active {
+  transition: all 0.3s ease;
+}
+.slide-fade-enter-from, .slide-fade-leave-to {
+  transform: translateX(100%);
+  opacity: 0;
 }
 
-.txt-roboto {
-  font-family: Roboto;
+/* Transition pour l'overlay */
+.fade-enter-active, .fade-leave-active {
+  transition: opacity 0.3s ease;
+}
+.fade-enter-from, .fade-leave-to {
+  opacity: 0;
 }
 
-body a {
-  color: $primary;
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.6);
+  z-index: 998; 
+}
+
+.menu-mobile {
+  z-index: 999!important; 
 }

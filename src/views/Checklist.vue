@@ -240,13 +240,13 @@
 					<h2 class="checklist__title">{{ name }}</h2>
 					<div class="checklist__title-border"></div>
 					<div class="checklist__percentage-border" :ref="el => { progressBars[name] = el }"></div>
-					<ul class="checklist-container">
-						<li v-for="(item, i) in checklist" :key="i" class="checklist-item">
-							<input :id="generateId(item.label)" type="checkbox" :checked="item.checked" @change="updateCheckbox(item)" />
-							<label :for="generateId(item.label)" class="checkbox"></label>
-							<span class="checklist-item__title">{{ item.label }}</span>
-						</li>
-					</ul>
+                        <ul class="checklist-container">
+                            <li v-for="(item, i) in checklist" :key="i" class="checklist-item">
+                                <input :id="generateId(item.label)" type="checkbox" :checked="item.checked" @change="updateCheckbox(item)" />
+                                <label :for="generateId(item.label)" class="checkbox"></label>
+                                <span class="checklist-item__title">{{ item.label }}</span>
+                            </li>
+                        </ul>
 				</section>
 			</div>
 		</div>
