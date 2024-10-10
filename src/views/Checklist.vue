@@ -218,6 +218,19 @@
     }
     countChecked();
   }
+
+
+    const anyChecked = computed(() => {
+        for (const key in checklists.value) {
+            const checklist = checklists.value[key];
+            if (checklist.some(item => item.checked)) {
+            return true;
+            }
+        }
+        return false;
+    });
+
+
 </script>
 
 <template>
@@ -231,8 +244,9 @@
 
 		<!-- Reset btn  -->
 		<div class="container-box">
-			<button class="reset-button" @click="resetCheckboxes">Réinitialiser</button>
-
+            <transition name="fade" mode="out-in">
+                <button v-if="anyChecked" class="reset-button" @click="resetCheckboxes">Réinitialiser</button>
+            </transition>
 
 			<div class="container-items">
 				<!-- Checklist Section -->
